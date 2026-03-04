@@ -1,134 +1,216 @@
 import { useState, useEffect, useRef } from "react";
 
-const SECTIONS = ["Work", "Publications", "About", "Contact"];
+const SECTIONS = ["Home", "About", "Experience", "Projects"];
+
+const EXPERIENCE = [
+  {
+    role: "Research Analyst",
+    company: "S&P Global",
+    location: "Various",
+    period: "2024 – Present",
+    description: "Conducting market research, data analysis, and modeling to deliver insights on global commodities, sustainability, and energy transition trends as part of an 18-month rotational program.",
+    tags: ["Data Analysis", "Energy", "Commodities", "Modeling"],
+    icon: "S",
+    color: "#6B8F71",
+  },
+  {
+    role: "SVMP Fellow",
+    company: "Harvard University",
+    location: "Cambridge, MA",
+    period: "Summer 2024",
+    description: "Selected for Harvard's competitive Silicon Valley Meets the Pentagon program, bridging technology innovation with national security and defense strategy.",
+    tags: ["Strategy", "Defense Tech", "Policy"],
+    icon: "H",
+    color: "#8B6B8F",
+  },
+  {
+    role: "Research Assistant",
+    company: "University of Florida – HCI Lab",
+    location: "Gainesville, FL",
+    period: "2022 – 2023",
+    description: "Developed immersive audio systems for accessible sports broadcasts, co-authoring papers published at UIST '23 and CHI EA '23.",
+    tags: ["Accessibility", "HCI", "Audio", "Research"],
+    icon: "UF",
+    color: "#6B7B8F",
+  },
+  {
+    role: "B.S. Mechanical Engineering",
+    company: "University of Florida",
+    location: "Gainesville, FL",
+    period: "2020 – 2024",
+    description: "Graduated with certificates in Engineering Innovation and Engineering Leadership. Focused on human-centered design and accessible technology research.",
+    tags: ["Engineering", "Innovation", "Leadership"],
+    icon: "UF",
+    color: "#8F7B6B",
+  },
+];
 
 const PROJECTS = [
   {
     title: "Front Row",
-    subtitle: "Immersive Audio for Blind Tennis Viewers",
-    tags: ["Accessibility", "HCI", "Audio Design"],
-    description: "Developed an immersive audio system that automatically generates spatial representations of tennis broadcasts, enabling blind and low-vision viewers to experience the game through sound.",
-    venue: "UIST '23 — ACM Symposium on User Interface Software & Technology",
-    year: "2023",
+    description: "An immersive audio system that automatically generates spatial representations of tennis broadcasts for blind and low-vision viewers.",
+    tags: ["Accessibility", "HCI", "Audio Design", "Python"],
     link: "https://doi.org/10.1145/3586183.3606830",
-    color: "#E8F0E4",
+    linkLabel: "Paper",
+    venue: "UIST '23",
   },
   {
     title: "Accessible Sports Broadcasts",
-    subtitle: "Research on BLV Viewer Experience",
+    description: "Research exploring how sports broadcasts can be redesigned to serve blind and low-vision audiences with inclusive design principles.",
     tags: ["Research", "Accessibility", "UX"],
-    description: "Explored how sports broadcasts can be redesigned to serve blind and low-vision audiences — proposing design principles for inclusive media experiences.",
-    venue: "CHI EA '23 — Extended Abstracts, ACM CHI Conference",
-    year: "2023",
     link: "https://doi.org/10.1145/3544549.3585610",
-    color: "#E4E8F0",
+    linkLabel: "Paper",
+    venue: "CHI EA '23",
   },
   {
-    title: "S&P Global — Commodities Research",
-    subtitle: "Market Research & Data Modeling",
-    tags: ["Data Analysis", "Energy", "Sustainability"],
-    description: "Conducting market research, data analysis, and modeling across global commodities, sustainability, and energy transition as part of an 18-month analyst rotational program.",
-    venue: "S&P Global — Research Analyst",
-    year: "2024–Present",
+    title: "Commodities Research",
+    description: "Market research and data modeling across global commodities, sustainability, and energy transition at S&P Global.",
+    tags: ["Data Analysis", "Energy", "Sustainability", "Modeling"],
     link: null,
-    color: "#F0E8E4",
-  },
-  {
-    title: "Harvard SVMP",
-    subtitle: "Silicon Valley Meets the Pentagon",
-    tags: ["Strategy", "Defense Tech", "Policy"],
-    description: "Selected for Harvard's competitive summer program bridging technology innovation with national security and defense strategy.",
-    venue: "Harvard University — Summer Venture in Management Program",
-    year: "2024",
-    link: null,
-    color: "#F0E4EC",
+    linkLabel: null,
+    venue: "S&P Global",
   },
 ];
 
-const EXPERIENCE = [
-  { role: "Research Analyst", company: "S&P Global", type: "Rotational Program", period: "2024–Present" },
-  { role: "SVMP Fellow", company: "Harvard University", type: "Fellowship", period: "2024" },
-  { role: "Research Assistant", company: "University of Florida", type: "HCI Lab", period: "2022–2023" },
-];
-
-function useInView(threshold = 0.15) {
+function useInView(threshold = 0.1) {
   const ref = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [visible, setVisible] = useState(false);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
     const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); obs.unobserve(el); } },
+      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.unobserve(el); } },
       { threshold }
     );
     obs.observe(el);
     return () => obs.disconnect();
   }, [threshold]);
-  return [ref, isVisible];
+  return [ref, visible];
 }
 
 function FadeIn({ children, delay = 0 }) {
-  const [ref, isVisible] = useInView();
+  const [ref, visible] = useInView();
   return (
     <div ref={ref} style={{
-      opacity: isVisible ? 1 : 0,
-      transform: isVisible ? "translateY(0)" : "translateY(32px)",
-      transition: `opacity 0.8s cubic-bezier(0.16,1,0.3,1) ${delay}s, transform 0.8s cubic-bezier(0.16,1,0.3,1) ${delay}s`,
+      opacity: visible ? 1 : 0,
+      transform: visible ? "translateY(0)" : "translateY(28px)",
+      transition: `opacity 0.7s cubic-bezier(0.16,1,0.3,1) ${delay}s, transform 0.7s cubic-bezier(0.16,1,0.3,1) ${delay}s`,
     }}>{children}</div>
+  );
+}
+
+function ExperienceCard({ item, index }) {
+  const [open, setOpen] = useState(index === 0);
+  return (
+    <FadeIn delay={index * 0.08}>
+      <div
+        onClick={() => setOpen(!open)}
+        style={{
+          background: "rgba(255,255,255,0.03)",
+          border: "1px solid rgba(255,255,255,0.08)",
+          borderRadius: "14px",
+          padding: "24px 28px",
+          cursor: "pointer",
+          transition: "all 0.3s ease",
+          marginBottom: "16px",
+        }}
+        onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(180,160,140,0.25)"; e.currentTarget.style.background = "rgba(255,255,255,0.05)"; }}
+        onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.background = "rgba(255,255,255,0.03)"; }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <div style={{
+            width: "42px", height: "42px", borderRadius: "10px",
+            background: item.color, display: "flex", alignItems: "center", justifyContent: "center",
+            fontFamily: "'DM Mono', monospace", fontSize: "13px", fontWeight: 600, color: "#fff",
+            flexShrink: 0,
+          }}>{item.icon}</div>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "8px" }}>
+              <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", fontWeight: 600, color: "#E8E4DF", margin: 0 }}>{item.role}</h3>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s ease", flexShrink: 0 }}>
+                <path d="M3 5L7 9L11 5" stroke="#888" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "#888", marginTop: "2px" }}>
+              {item.company} &middot; {item.location} &middot; {item.period}
+            </div>
+          </div>
+        </div>
+        <div style={{
+          maxHeight: open ? "300px" : "0",
+          overflow: "hidden",
+          transition: "max-height 0.4s cubic-bezier(0.16,1,0.3,1), opacity 0.3s ease",
+          opacity: open ? 1 : 0,
+          marginTop: open ? "16px" : "0",
+          paddingLeft: "58px",
+        }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "#AAA", lineHeight: 1.7, margin: "0 0 14px 0" }}>{item.description}</p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+            {item.tags.map((t) => (
+              <span key={t} style={{
+                fontFamily: "'DM Mono', monospace", fontSize: "10px", letterSpacing: "0.04em",
+                padding: "4px 10px", borderRadius: "6px",
+                background: "rgba(255,255,255,0.06)", color: "#999",
+                textTransform: "uppercase",
+              }}>{t}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </FadeIn>
   );
 }
 
 function ProjectCard({ project, index }) {
   const [hovered, setHovered] = useState(false);
-  const num = String(index + 1).padStart(2, "0");
   return (
     <FadeIn delay={index * 0.1}>
       <div
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        onClick={() => project.link && window.open(project.link, "_blank")}
         style={{
-          background: hovered ? project.color : "#FAFAF8",
-          border: "1px solid", borderColor: hovered ? "transparent" : "#E8E6E1",
-          borderRadius: "16px", padding: "36px",
-          cursor: project.link ? "pointer" : "default",
-          transition: "all 0.5s cubic-bezier(0.16,1,0.3,1)",
-          transform: hovered ? "translateY(-4px)" : "translateY(0)",
-          position: "relative", overflow: "hidden", minHeight: "280px",
-          display: "flex", flexDirection: "column", justifyContent: "space-between",
+          background: "rgba(255,255,255,0.03)",
+          border: "1px solid rgba(255,255,255,0.08)",
+          borderRadius: "14px", overflow: "hidden",
+          transition: "all 0.3s ease",
+          borderColor: hovered ? "rgba(180,160,140,0.25)" : "rgba(255,255,255,0.08)",
+          transform: hovered ? "translateY(-3px)" : "translateY(0)",
         }}
       >
-        <div>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "20px" }}>
-            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", color: "#999" }}>{num}</span>
-            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: "#999", letterSpacing: "0.05em", textTransform: "uppercase" }}>{project.year}</span>
-          </div>
-          <h3 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "28px", fontWeight: 400, color: "#1A1A18", margin: "0 0 6px 0", lineHeight: 1.2 }}>{project.title}</h3>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "#666", margin: "0 0 16px 0", lineHeight: 1.5 }}>{project.subtitle}</p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "#888", margin: "0 0 20px 0", lineHeight: 1.6 }}>{project.description}</p>
+        <div style={{
+          height: "140px", background: `linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)`,
+          display: "flex", alignItems: "center", justifyContent: "center",
+          borderBottom: "1px solid rgba(255,255,255,0.06)",
+        }}>
+          <span style={{ fontFamily: "'Instrument Serif', serif", fontSize: "24px", color: "rgba(255,255,255,0.12)" }}>{project.venue}</span>
         </div>
-        <div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "16px" }}>
-            {project.tags.map((tag) => (
-              <span key={tag} style={{
-                fontFamily: "'DM Mono', monospace", fontSize: "11px", letterSpacing: "0.04em", textTransform: "uppercase",
-                padding: "5px 12px", borderRadius: "100px",
-                background: hovered ? "rgba(255,255,255,0.6)" : "#F0EEEB", color: "#666", transition: "background 0.4s ease",
-              }}>{tag}</span>
+        <div style={{ padding: "24px" }}>
+          <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "17px", fontWeight: 600, color: "#E8E4DF", margin: "0 0 8px 0" }}>{project.title}</h3>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "#999", lineHeight: 1.6, margin: "0 0 16px 0" }}>{project.description}</p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: project.link ? "16px" : "0" }}>
+            {project.tags.map((t) => (
+              <span key={t} style={{
+                fontFamily: "'DM Mono', monospace", fontSize: "10px",
+                padding: "4px 10px", borderRadius: "6px",
+                background: "rgba(180,160,140,0.12)", color: "#B4A08C",
+                textTransform: "uppercase", letterSpacing: "0.04em",
+              }}>{t}</span>
             ))}
           </div>
-          <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#AAA", margin: 0 }}>{project.venue}</p>
+          {project.link && (
+            <a href={project.link} target="_blank" rel="noopener noreferrer"
+              style={{
+                fontFamily: "'DM Mono', monospace", fontSize: "12px", color: "#B4A08C",
+                textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px",
+                transition: "color 0.2s ease",
+              }}
+              onMouseEnter={(e) => { e.target.style.color = "#E8E4DF"; }}
+              onMouseLeave={(e) => { e.target.style.color = "#B4A08C"; }}
+            >
+              {project.linkLabel} <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H5M13 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </a>
+          )}
         </div>
-        {project.link && (
-          <div style={{
-            position: "absolute", top: "36px", right: "36px", width: "32px", height: "32px", borderRadius: "50%",
-            background: hovered ? "rgba(26,26,24,0.08)" : "transparent",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            transition: "all 0.4s ease", opacity: hovered ? 1 : 0,
-          }}>
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H5M13 1V9" stroke="#1A1A18" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </div>
-        )}
       </div>
     </FadeIn>
   );
@@ -136,7 +218,7 @@ function ProjectCard({ project, index }) {
 
 export default function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState(null);
+  const [activeSection, setActiveSection] = useState("home");
   const [heroVisible, setHeroVisible] = useState(false);
   const [hoveredNav, setHoveredNav] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -146,248 +228,239 @@ export default function Portfolio() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 60);
-      for (const sec of ["contact", "about", "publications", "work"]) {
+      for (const sec of ["projects", "experience", "about", "home"]) {
         const el = document.getElementById(sec);
         if (el && el.getBoundingClientRect().top < 300) { setActiveSection(sec); return; }
       }
-      setActiveSection(null);
     };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const scrollTo = (id) => { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); };
+  const scrollTo = (id) => {
+    if (id === "home") { window.scrollTo({ top: 0, behavior: "smooth" }); }
+    else { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); }
+  };
 
   return (
-    <div style={{ background: "#FAFAF8", minHeight: "100vh", fontFamily: "'DM Sans', sans-serif", color: "#1A1A18", overflowX: "hidden" }}>
+    <div style={{ background: "#111110", minHeight: "100vh", fontFamily: "'DM Sans', sans-serif", color: "#E8E4DF", overflowX: "hidden", position: "relative" }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { background: #FAFAF8; }
-        ::selection { background: #1A1A18; color: #FAFAF8; }
-        @keyframes grain { 0%,100%{transform:translate(0,0)} 10%{transform:translate(-2%,-2%)} 20%{transform:translate(2%,2%)} 30%{transform:translate(-1%,1%)} 40%{transform:translate(1%,-1%)} 50%{transform:translate(-2%,2%)} 60%{transform:translate(2%,-2%)} 70%{transform:translate(-1%,-1%)} 80%{transform:translate(1%,1%)} 90%{transform:translate(-2%,0%)} }
-        .grain::after { content:''; position:fixed; top:-50%; left:-50%; width:200%; height:200%; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); opacity:0.03; pointer-events:none; z-index:9999; animation:grain 8s steps(10) infinite; }
-        .exp-row { transition: background 0.3s ease; }
-        .exp-row:hover { background: #F5F4F0 !important; }
+        body { background: #111110; }
+        ::selection { background: #B4A08C; color: #111110; }
+        .grid-bg {
+          position: fixed; inset: 0; z-index: 0; pointer-events: none;
+          background-image:
+            linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+          background-size: 60px 60px;
+        }
         .desktop-nav { display: flex; }
         .mobile-burger { display: none; }
         @media (max-width: 640px) {
           .desktop-nav { display: none !important; }
           .mobile-burger { display: flex !important; }
-          .project-grid { grid-template-columns: 1fr !important; }
-          .about-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-          .exp-table-header { display: none !important; }
-          .exp-row { flex-direction: column !important; gap: 4px !important; }
-          .exp-row > div { width: 100% !important; }
+          .hero-grid { flex-direction: column-reverse !important; text-align: center !important; }
+          .hero-grid .hero-text { align-items: center !important; }
+          .projects-grid { grid-template-columns: 1fr !important; }
+          .socials { justify-content: center !important; }
         }
+        @media (max-width: 900px) {
+          .projects-grid { grid-template-columns: 1fr 1fr !important; }
+        }
+        a { color: inherit; }
       `}</style>
 
-      <div className="grain" />
+      <div className="grid-bg" />
 
-      {/* NAVIGATION */}
+      {/* NAV */}
       <nav style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-        padding: scrolled ? "16px 40px" : "24px 40px",
+        padding: "0 40px", height: "60px",
         display: "flex", justifyContent: "space-between", alignItems: "center",
-        background: scrolled ? "rgba(250,250,248,0.92)" : "transparent",
-        backdropFilter: scrolled ? "blur(20px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(0,0,0,0.05)" : "1px solid transparent",
-        transition: "all 0.4s cubic-bezier(0.16,1,0.3,1)",
+        background: scrolled ? "rgba(17,17,16,0.88)" : "transparent",
+        backdropFilter: scrolled ? "blur(16px)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "1px solid transparent",
+        transition: "all 0.4s ease",
       }}>
-        <div style={{ cursor: "pointer" }} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-          <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "14px", letterSpacing: "0.03em", color: "#1A1A18" }}>Conrad Wyrick</span>
+        <div style={{ cursor: "pointer", zIndex: 101 }} onClick={() => scrollTo("home")}>
+          <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", fontWeight: 600, color: "#E8E4DF", letterSpacing: "0.01em" }}>Conrad Wyrick</span>
         </div>
 
-        <div className="desktop-nav" style={{ gap: "36px", alignItems: "center" }}>
+        <div className="desktop-nav" style={{ gap: "32px", alignItems: "center" }}>
           {SECTIONS.map((sec) => {
             const id = sec.toLowerCase();
             const isActive = activeSection === id;
-            const isHovered = hoveredNav === id;
             return (
-              <div key={sec}
+              <span key={sec}
                 onClick={() => scrollTo(id)}
                 onMouseEnter={() => setHoveredNav(id)}
                 onMouseLeave={() => setHoveredNav(null)}
                 style={{
-                  fontFamily: "'DM Mono', monospace", fontSize: "12px", letterSpacing: "0.08em", textTransform: "uppercase",
-                  color: isActive ? "#1A1A18" : "#999", transition: "color 0.3s ease",
-                  position: "relative", cursor: "pointer", padding: "4px 0",
-                }}>
-                {sec}
-                <div style={{
-                  position: "absolute", bottom: 0, left: 0, right: 0, height: "1px", background: "#1A1A18",
-                  transform: isActive || isHovered ? "scaleX(1)" : "scaleX(0)",
-                  transformOrigin: "left", transition: "transform 0.3s cubic-bezier(0.16,1,0.3,1)",
-                }} />
-              </div>
+                  fontFamily: "'DM Sans', sans-serif", fontSize: "13px", fontWeight: 400,
+                  color: isActive ? "#E8E4DF" : "#777",
+                  cursor: "pointer", transition: "color 0.2s ease",
+                  ...(hoveredNav === id && !isActive ? { color: "#BBB" } : {}),
+                }}>{sec}</span>
             );
           })}
         </div>
 
         <div className="mobile-burger" onClick={() => setMenuOpen(!menuOpen)}
-          style={{ cursor: "pointer", flexDirection: "column", gap: "5px", padding: "4px", zIndex: 200 }}>
-          <div style={{ width: "20px", height: "1.5px", background: "#1A1A18", transition: "all 0.3s", transform: menuOpen ? "rotate(45deg) translate(4.5px,4.5px)" : "none" }} />
-          <div style={{ width: "20px", height: "1.5px", background: "#1A1A18", transition: "all 0.3s", opacity: menuOpen ? 0 : 1 }} />
-          <div style={{ width: "20px", height: "1.5px", background: "#1A1A18", transition: "all 0.3s", transform: menuOpen ? "rotate(-45deg) translate(4.5px,-4.5px)" : "none" }} />
+          style={{ cursor: "pointer", flexDirection: "column", gap: "5px", padding: "4px", zIndex: 101 }}>
+          <div style={{ width: "20px", height: "1.5px", background: "#E8E4DF", transition: "all 0.3s", transform: menuOpen ? "rotate(45deg) translate(4.5px,4.5px)" : "none" }} />
+          <div style={{ width: "20px", height: "1.5px", background: "#E8E4DF", transition: "all 0.3s", opacity: menuOpen ? 0 : 1 }} />
+          <div style={{ width: "20px", height: "1.5px", background: "#E8E4DF", transition: "all 0.3s", transform: menuOpen ? "rotate(-45deg) translate(4.5px,-4.5px)" : "none" }} />
         </div>
       </nav>
 
       {menuOpen && (
-        <div style={{ position: "fixed", inset: 0, zIndex: 99, background: "rgba(250,250,248,0.97)", backdropFilter: "blur(20px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "32px" }}>
+        <div style={{ position: "fixed", inset: 0, zIndex: 99, background: "rgba(17,17,16,0.97)", backdropFilter: "blur(20px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "32px" }}>
           {SECTIONS.map((sec) => (
             <div key={sec} onClick={() => { scrollTo(sec.toLowerCase()); setMenuOpen(false); }}
-              style={{ fontFamily: "'Instrument Serif', serif", fontSize: "32px", color: "#1A1A18", cursor: "pointer" }}>{sec}</div>
+              style={{ fontFamily: "'Instrument Serif', serif", fontSize: "32px", color: "#E8E4DF", cursor: "pointer" }}>{sec}</div>
           ))}
         </div>
       )}
 
       {/* HERO */}
-      <section style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "140px 40px 80px", maxWidth: "1200px", margin: "0 auto", position: "relative" }}>
-        <div style={{ opacity: heroVisible ? 1 : 0, transform: heroVisible ? "translateY(0)" : "translateY(40px)", transition: "all 1s cubic-bezier(0.16,1,0.3,1) 0.2s" }}>
-          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#999", marginBottom: "24px" }}>Mechanical Engineer & Researcher</div>
-          <h1 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(42px, 8vw, 96px)", fontWeight: 400, lineHeight: 1.05, color: "#1A1A18", maxWidth: "900px", marginBottom: "32px" }}>
-            Building things that <em style={{ fontStyle: "italic", color: "#666" }}>matter</em> — from accessible tech to energy systems.
-          </h1>
-        </div>
-        <div style={{ opacity: heroVisible ? 1 : 0, transform: heroVisible ? "translateY(0)" : "translateY(30px)", transition: "all 1s cubic-bezier(0.16,1,0.3,1) 0.5s", display: "flex", flexWrap: "wrap", gap: "12px", marginTop: "8px" }}>
-          <a href="https://drive.google.com/file/d/1nvPh9yox4rBDclJH8vA1FVnxNPEADWxQ/view?usp=sharing" target="_blank" rel="noopener noreferrer"
-            style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", letterSpacing: "0.04em", padding: "12px 28px", border: "1px solid #1A1A18", borderRadius: "100px", background: "#1A1A18", color: "#FAFAF8", textDecoration: "none", transition: "all 0.3s ease" }}
-            onMouseEnter={(e) => { e.target.style.background = "transparent"; e.target.style.color = "#1A1A18"; }}
-            onMouseLeave={(e) => { e.target.style.background = "#1A1A18"; e.target.style.color = "#FAFAF8"; }}>Resume</a>
-          <a href="https://drive.google.com/file/d/1S0dzFu8A_i0POD2Agrf7sNsDGCqKYdtD/view?usp=sharing" target="_blank" rel="noopener noreferrer"
-            style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", letterSpacing: "0.04em", padding: "12px 28px", border: "1px solid #D0CEC9", borderRadius: "100px", background: "transparent", color: "#1A1A18", textDecoration: "none", transition: "all 0.3s ease" }}
-            onMouseEnter={(e) => { e.target.style.borderColor = "#1A1A18"; }}
-            onMouseLeave={(e) => { e.target.style.borderColor = "#D0CEC9"; }}>CV</a>
-        </div>
-        <div style={{ position: "absolute", bottom: "40px", left: "50%", transform: "translateX(-50%)", opacity: heroVisible ? 0.4 : 0, transition: "opacity 1.5s ease 1.2s" }}>
-          <div style={{ width: "1px", height: "40px", background: "linear-gradient(to bottom, transparent, #1A1A18)" }} />
+      <section id="home" style={{ minHeight: "100vh", display: "flex", alignItems: "center", padding: "100px 40px 60px", maxWidth: "960px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+        <div className="hero-grid" style={{
+          display: "flex", gap: "60px", alignItems: "center", width: "100%",
+          opacity: heroVisible ? 1 : 0, transform: heroVisible ? "translateY(0)" : "translateY(30px)",
+          transition: "all 0.9s cubic-bezier(0.16,1,0.3,1) 0.15s",
+        }}>
+          <div className="hero-text" style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+            <h1 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(40px, 6vw, 64px)", fontWeight: 400, lineHeight: 1.1, color: "#E8E4DF", marginBottom: "16px" }}>
+              Hi, I'm Conrad.
+            </h1>
+            <p style={{ fontSize: "17px", color: "#999", lineHeight: 1.5, marginBottom: "6px" }}>
+              Mechanical Engineer and Researcher
+            </p>
+            <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", color: "#666", marginBottom: "28px" }}>
+              Research Analyst @ S&P Global
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "24px" }}>
+              <a href="https://drive.google.com/file/d/1nvPh9yox4rBDclJH8vA1FVnxNPEADWxQ/view?usp=sharing" target="_blank" rel="noopener noreferrer"
+                style={{
+                  fontFamily: "'DM Sans', sans-serif", fontSize: "13px", fontWeight: 500,
+                  padding: "10px 24px", borderRadius: "8px",
+                  background: "#E8E4DF", color: "#111110",
+                  textDecoration: "none", transition: "all 0.2s ease",
+                }}
+                onMouseEnter={(e) => { e.target.style.background = "#fff"; }}
+                onMouseLeave={(e) => { e.target.style.background = "#E8E4DF"; }}
+              >Resume</a>
+              <a href="https://drive.google.com/file/d/1S0dzFu8A_i0POD2Agrf7sNsDGCqKYdtD/view?usp=sharing" target="_blank" rel="noopener noreferrer"
+                style={{
+                  fontFamily: "'DM Sans', sans-serif", fontSize: "13px", fontWeight: 500,
+                  padding: "10px 24px", borderRadius: "8px",
+                  background: "transparent", color: "#E8E4DF",
+                  border: "1px solid rgba(255,255,255,0.15)",
+                  textDecoration: "none", transition: "all 0.2s ease",
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.35)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)"; }}
+              >CV</a>
+            </div>
+            <div className="socials" style={{ display: "flex", gap: "16px" }}>
+              <a href="https://www.linkedin.com/in/conradwyrick/" target="_blank" rel="noopener noreferrer"
+                style={{ color: "#666", transition: "color 0.2s" }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = "#E8E4DF"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = "#666"; }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:contact@conradwyrick.com"
+                style={{ color: "#666", transition: "color 0.2s" }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = "#E8E4DF"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = "#666"; }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div style={{ flexShrink: 0 }}>
+            <div style={{
+              width: "200px", height: "220px", borderRadius: "18px",
+              background: "linear-gradient(135deg, rgba(180,160,140,0.15) 0%, rgba(255,255,255,0.03) 100%)",
+              border: "1px solid rgba(255,255,255,0.08)",
+              display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "16px",
+            }}>
+              <div style={{
+                width: "100px", height: "100px", borderRadius: "50%",
+                background: "linear-gradient(135deg, #6B8F71, #8B6B8F)",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontFamily: "'Instrument Serif', serif", fontSize: "36px", color: "#fff",
+              }}>C</div>
+              <div style={{ textAlign: "center" }}>
+                <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", color: "#888", textTransform: "uppercase", letterSpacing: "0.08em" }}>Mechanical Engineering</div>
+                <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", color: "#666", marginTop: "2px" }}>University of Florida</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* WORK */}
-      <section id="work" style={{ padding: "80px 40px 120px", maxWidth: "1200px", margin: "0 auto" }}>
+      {/* ABOUT */}
+      <section id="about" style={{ padding: "100px 40px", maxWidth: "960px", margin: "0 auto", position: "relative", zIndex: 1 }}>
         <FadeIn>
-          <div style={{ display: "flex", alignItems: "baseline", gap: "16px", marginBottom: "60px" }}>
-            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", color: "#CCC" }}>01</span>
-            <h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "42px", fontWeight: 400 }}>Selected Work</h2>
+          <h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "36px", fontWeight: 400, textAlign: "center", marginBottom: "40px" }}>About Me</h2>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <div style={{ maxWidth: "680px", margin: "0 auto" }}>
+            <p style={{ fontSize: "15px", color: "#AAA", lineHeight: 1.8, marginBottom: "16px" }}>
+              I'm a Mechanical Engineering graduate from the University of Florida with certificates in Engineering Innovation and Engineering Leadership. I'm passionate about building technology that serves people — from accessible systems for blind and low-vision users to data-driven insights on the global energy transition.
+            </p>
+            <p style={{ fontSize: "15px", color: "#AAA", lineHeight: 1.8 }}>
+              Currently, I'm a Research Analyst at S&P Global in an 18-month rotational program focused on commodities, sustainability, and energy markets. When I'm not modeling data, you can find me reading about defense tech, tinkering with side projects, or exploring new places.
+            </p>
           </div>
         </FadeIn>
-        <div className="project-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}>
+      </section>
+
+      {/* EXPERIENCE */}
+      <section id="experience" style={{ padding: "100px 40px", maxWidth: "960px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+        <FadeIn>
+          <h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "36px", fontWeight: 400, textAlign: "center", marginBottom: "48px" }}>Experience</h2>
+        </FadeIn>
+        <div style={{ maxWidth: "680px", margin: "0 auto" }}>
+          {EXPERIENCE.map((item, i) => (
+            <ExperienceCard key={i} item={item} index={i} />
+          ))}
+        </div>
+      </section>
+
+      {/* PUBLICATIONS */}
+      <section style={{ padding: "0 40px 40px", maxWidth: "960px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+        <FadeIn>
+          <div style={{ maxWidth: "680px", margin: "0 auto", padding: "28px", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px" }}>
+            <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 600, color: "#E8E4DF", marginBottom: "16px", textTransform: "uppercase", letterSpacing: "0.06em" }}>Publications</h3>
+            <div style={{ fontSize: "13px", color: "#888", lineHeight: 1.7, marginBottom: "10px" }}>
+              <span style={{ color: "#BBB" }}>Front Row:</span> Automatically Generating Immersive Audio Representations of Tennis Broadcasts for Blind Viewers. <span style={{ color: "#666" }}>UIST '23</span> &middot; <a href="https://doi.org/10.1145/3586183.3606830" target="_blank" rel="noopener noreferrer" style={{ color: "#B4A08C", textDecoration: "none" }}>DOI ↗</a>
+            </div>
+            <div style={{ fontSize: "13px", color: "#888", lineHeight: 1.7 }}>
+              <span style={{ color: "#BBB" }}>Towards Accessible Sports Broadcasts</span> for Blind and Low-Vision Viewers. <span style={{ color: "#666" }}>CHI EA '23</span> &middot; <a href="https://doi.org/10.1145/3544549.3585610" target="_blank" rel="noopener noreferrer" style={{ color: "#B4A08C", textDecoration: "none" }}>DOI ↗</a>
+            </div>
+          </div>
+        </FadeIn>
+      </section>
+
+      {/* PROJECTS */}
+      <section id="projects" style={{ padding: "100px 40px", maxWidth: "960px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+        <FadeIn>
+          <h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "36px", fontWeight: 400, textAlign: "center", marginBottom: "48px" }}>Projects</h2>
+        </FadeIn>
+        <div className="projects-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "20px" }}>
           {PROJECTS.map((p, i) => <ProjectCard key={p.title} project={p} index={i} />)}
         </div>
       </section>
 
-      {/* EXPERIENCE INDEX */}
-      <section id="publications" style={{ padding: "80px 40px 120px", maxWidth: "1200px", margin: "0 auto" }}>
-        <FadeIn>
-          <div style={{ display: "flex", alignItems: "baseline", gap: "16px", marginBottom: "60px" }}>
-            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", color: "#CCC" }}>02</span>
-            <h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "42px", fontWeight: 400 }}>Experience Index</h2>
-          </div>
-        </FadeIn>
-        <FadeIn>
-          <div className="exp-table-header" style={{ display: "flex", padding: "0 20px 16px", borderBottom: "1px solid #E8E6E1", marginBottom: "4px" }}>
-            {["Role", "Organization", "Type", "Year"].map((h, i) => (
-              <div key={h} style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", letterSpacing: "0.08em", textTransform: "uppercase", color: "#BBB", width: i === 0 ? "35%" : i === 3 ? "15%" : "25%" }}>{h}</div>
-            ))}
-          </div>
-        </FadeIn>
-        {EXPERIENCE.map((exp, i) => (
-          <FadeIn key={i} delay={i * 0.08}>
-            <div className="exp-row" style={{ display: "flex", padding: "20px", borderBottom: "1px solid #F0EEEB", borderRadius: "8px" }}>
-              <div style={{ fontSize: "15px", fontWeight: 500, color: "#1A1A18", width: "35%" }}>{exp.role}</div>
-              <div style={{ fontSize: "15px", color: "#666", width: "25%" }}>{exp.company}</div>
-              <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: "#999", width: "25%", display: "flex", alignItems: "center" }}>{exp.type}</div>
-              <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: "#BBB", width: "15%", display: "flex", alignItems: "center", justifyContent: "flex-end" }}>{exp.period}</div>
-            </div>
-          </FadeIn>
-        ))}
-        <FadeIn delay={0.3}>
-          <div style={{ marginTop: "60px" }}>
-            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#BBB", marginBottom: "20px", paddingLeft: "20px" }}>Education</div>
-            <div className="exp-row" style={{ display: "flex", padding: "20px", borderBottom: "1px solid #F0EEEB", borderRadius: "8px" }}>
-              <div style={{ fontSize: "15px", fontWeight: 500, color: "#1A1A18", width: "35%" }}>B.S. Mechanical Engineering</div>
-              <div style={{ fontSize: "15px", color: "#666", width: "25%" }}>University of Florida</div>
-              <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: "#999", width: "25%", display: "flex", alignItems: "center" }}>Innovation & Leadership Certs</div>
-              <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: "#BBB", width: "15%", display: "flex", alignItems: "center", justifyContent: "flex-end" }}>2024</div>
-            </div>
-          </div>
-        </FadeIn>
-      </section>
-
-      {/* ABOUT */}
-      <section id="about" style={{ padding: "80px 40px 120px", maxWidth: "1200px", margin: "0 auto" }}>
-        <FadeIn>
-          <div style={{ display: "flex", alignItems: "baseline", gap: "16px", marginBottom: "60px" }}>
-            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", color: "#CCC" }}>03</span>
-            <h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "42px", fontWeight: 400 }}>About</h2>
-          </div>
-        </FadeIn>
-        <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", alignItems: "start" }}>
-          <FadeIn>
-            <div>
-              <p style={{ fontFamily: "'Instrument Serif', serif", fontSize: "28px", fontWeight: 400, lineHeight: 1.5, marginBottom: "28px" }}>
-                I'm a mechanical engineer who believes technology should work <em style={{ fontStyle: "italic", color: "#888" }}>for everyone</em>.
-              </p>
-              <p style={{ fontSize: "15px", lineHeight: 1.75, color: "#666", marginBottom: "20px" }}>
-                My path has taken me from designing accessible audio systems for blind sports viewers to analyzing global energy markets at S&P Global. What connects it all is a commitment to rigorous engineering with a human-centered purpose.
-              </p>
-              <p style={{ fontSize: "15px", lineHeight: 1.75, color: "#666" }}>
-                I graduated from the University of Florida with a B.S. in Mechanical Engineering and certificates in Engineering Innovation and Engineering Leadership. In 2024, I was selected for Harvard's Silicon Valley Meets the Pentagon program, bridging technology and national security.
-              </p>
-            </div>
-          </FadeIn>
-          <FadeIn delay={0.15}>
-            <div style={{ background: "#F0EEEB", borderRadius: "20px", padding: "48px 40px" }}>
-              <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#999", marginBottom: "28px" }}>What drives me</div>
-              {[
-                { label: "Accessibility", desc: "Making technology inclusive by design" },
-                { label: "Sustainability", desc: "Modeling the energy transition" },
-                { label: "Research", desc: "Turning data into human impact" },
-                { label: "Innovation", desc: "Engineering elegant solutions" },
-              ].map((item, i) => (
-                <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", padding: "16px 0", borderBottom: i < 3 ? "1px solid #E4E2DD" : "none" }}>
-                  <span style={{ fontSize: "15px", fontWeight: 500, color: "#1A1A18" }}>{item.label}</span>
-                  <span style={{ fontSize: "13px", color: "#999" }}>{item.desc}</span>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* CONTACT */}
-      <section id="contact" style={{ padding: "80px 40px 60px", maxWidth: "1200px", margin: "0 auto" }}>
-        <FadeIn>
-          <div style={{ display: "flex", alignItems: "baseline", gap: "16px", marginBottom: "60px" }}>
-            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", color: "#CCC" }}>04</span>
-            <h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "42px", fontWeight: 400 }}>Get in Touch</h2>
-          </div>
-        </FadeIn>
-        <FadeIn delay={0.1}>
-          <div style={{ maxWidth: "640px" }}>
-            <p style={{ fontFamily: "'Instrument Serif', serif", fontSize: "28px", fontWeight: 400, lineHeight: 1.5, marginBottom: "40px" }}>
-              I'm always open to thoughtful conversations about engineering, research, or new opportunities.
-            </p>
-            <a href="https://www.linkedin.com/in/conradwyrick/" target="_blank" rel="noopener noreferrer"
-              style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "20px 24px", border: "1px solid #E8E6E1", borderRadius: "12px", textDecoration: "none", transition: "all 0.3s ease", background: "transparent" }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = "#F0EEEB"; e.currentTarget.style.borderColor = "#D0CEC9"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderColor = "#E8E6E1"; }}>
-              <div>
-                <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#999", marginBottom: "4px" }}>LinkedIn</div>
-                <div style={{ fontSize: "15px", color: "#1A1A18" }}>linkedin.com/in/conradwyrick</div>
-              </div>
-              <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H5M13 1V9" stroke="#999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </a>
-          </div>
-        </FadeIn>
-      </section>
-
       {/* FOOTER */}
-      <footer style={{ padding: "40px", maxWidth: "1200px", margin: "0 auto", borderTop: "1px solid #F0EEEB", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px" }}>
-        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: "#CCC" }}>© 2026 Conrad Wyrick</span>
-        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: "#CCC" }}>Designed with intention</span>
+      <footer style={{ padding: "40px", maxWidth: "960px", margin: "0 auto", borderTop: "1px solid rgba(255,255,255,0.06)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", position: "relative", zIndex: 1 }}>
+        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: "#444" }}>© 2026 Conrad Wyrick</span>
+        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: "#444" }}>Built with intention</span>
       </footer>
     </div>
   );
