@@ -6,9 +6,9 @@ const EXPERIENCE = [
   {
     role: "Research Analyst",
     company: "S&P Global",
-    location: "Various",
-    period: "2024 – Present",
-    description: "Conducting market research, data analysis, and modeling to deliver insights on global commodities, sustainability, and energy transition trends as part of an 18-month rotational program.",
+    location: "Houston,TX",
+    period: "2024 - Present",
+    description: "Collaborating with cross-functional teams to analyze energy market dynamics, automate data workflows, and develop visual analytics tools using Python, Excel, and Alteryx.",
     tags: ["Data Analysis", "Energy", "Commodities", "Modeling"],
     icon: "S",
     color: "#6B8F71",
@@ -18,114 +18,112 @@ const EXPERIENCE = [
     company: "Harvard University",
     location: "Cambridge, MA",
     period: "Summer 2024",
-    description: "Selected for Harvard's competitive Silicon Valley Meets the Pentagon program, bridging technology innovation with national security and defense strategy.",
-    tags: ["Strategy", "Defense Tech", "Policy"],
+    description: "Engaged in case-method analysis of real-world business scenarios alongside a diverse cohort of peers, developing critical thinking, decision-making, and leadership skills through discussions on strategy, entrepreneurship, and much more",
+    tags: ["Strategy", "Buinsess", "Policy"],
     icon: "H",
     color: "#8B6B8F",
   },
   {
-    role: "Research Assistant",
-    company: "University of Florida – HCI Lab",
+    role: "University of Florida IPPD",
+    company: "University of Florida and Arthrex",
     location: "Gainesville, FL",
-    period: "2022 – 2023",
-    description: "Developed immersive audio systems for accessible sports broadcasts, co-authoring papers published at UIST '23 and CHI EA '23.",
-    tags: ["Accessibility", "HCI", "Audio", "Research"],
+    period: "2023 - 2024",
+    description: "Collaborated with an interdisciplinary team to design, prototype, and test a specialized medical attachment using SolidWorks, MATLAB, LabVIEW, and 3D printing.",
+    tags: ["Engineering Design", "Project Management",],
     icon: "UF",
-    color: "#6B7B8F",
+    color: "#a25f1b",
   },
   {
-    role: "B.S. Mechanical Engineering",
-    company: "University of Florida",
-    location: "Gainesville, FL",
-    period: "2020 – 2024",
-    description: "Graduated with certificates in Engineering Innovation and Engineering Leadership. Focused on human-centered design and accessible technology research.",
-    tags: ["Engineering", "Innovation", "Leadership"],
-    icon: "UF",
-    color: "#8F7B6B",
+    role: "Research Intern",
+    company: "Columbia University",
+    location: "New York City, NY",
+    period: "2022 - 2023",
+    description: "Developed an accessibility system for 100+ blind and low-vision users, conducting user studies and publishing research at human-computer interaction conferences.",
+    tags: ["Accessibility","HCI","Innovation", "Research"],
+    icon: "CU",
+    color: "#1e86a0",
   },
 ];
 
 const PROJECTS = [
   {
-    id: "sure",
-    title: "Amazon SURE",
-    subtitle: "Summer Undergraduate Research Experience",
-    description: "Designed an immersive audio system for blind and low-vision tennis viewers at Columbia's CEAL lab. Published at UIST '23 and CHI EA '23.",
-    tags: ["Unity", "Computer Vision", "Python", "HCI"],
-    venue: "Columbia University",
-    period: "2022",
+    id: "hacklytics",
+    title: "Allocaid - Hacklytics 2026",
+    subtitle: "Databricks x United Nations Geo-Insight Challenge",
+    description: "Built an ML-powered tool that predicts what funding each humanitarian crisis should receive based on need, then measures where reality falls short.",
+    tags: ["Python", "Databricks", "XGBoost", "PySpark", "Streamlit"],
+    venue: "Georgia Tech",
+    period: "2026",
     detail: {
-      headline: "Summer Undergraduate Research Experience",
-      intro: "The Amazon Summer Undergraduate Research Experience (SURE) seeks to boost diversity in science and engineering by offering students from underrepresented communities a summer research opportunity at top-tier universities.",
+      headline: "Hacklytics 2026: Golden Byte",
+      intro: "Hacklytics is Georgia Tech's premier data science hackathon, hosted by Data Science @ Georgia Tech. 733 participants competed across five tracks over 36 hours at the Klaus Advanced Computing Building in Atlanta.",
       sections: [
         {
-          title: "The Computer Enabled Abilities Laboratory",
-          content: "The Computer Enabled Abilities Laboratory (CEAL) at Columbia University develops technologies to assist individuals with disabilities, primarily focusing on blind or low-vision people. By integrating computer science, engineering, and design, CEAL creates innovative tools that enhance accessibility, communication, and mobility, promoting independence and improving quality of life.",
+          title: "Databricks x United Nations Geo-Insight Challenge",
+          content: "A sponsor challenge asking teams to identify which humanitarian crises are most overlooked by analyzing mismatches between humanitarian needs and UN Pooled Fund coverage. Projects were shared directly with UN teams and judged by UN and Databricks representatives.",
+        },
+        {
+          title: "Team Allocaid",
+          content: "Our team formed around a shared interest in using data to surface inequities in how humanitarian aid is distributed. We built an ML-powered tool that predicts what funding each crisis should receive based purely on need, then measures where reality falls short.",
         },
         {
           title: "My Role",
-          content: "This was a full-time research opportunity as an undergraduate. I worked on designing a system to enhance tennis gameplay for blind and low-vision users. This project led to multiple publications in human-computer interaction (HCI) and reinforced my commitment to supporting individuals with disabilities. Facilitating user studies gave me firsthand insight into my impact and fueled my purpose to help others through research. Transitioning from a mechanical engineering background to a computer science lab challenged me, building resilience and adaptability for continual learning and development.",
-        },
-        {
-          title: "Publications",
-          content: "This research resulted in two publications: \"Front Row\" at UIST '23 — an immersive audio system that automatically generates spatial representations of tennis broadcasts for blind viewers, and \"Towards Accessible Sports Broadcasts\" at CHI EA '23 — exploring how sports broadcasts can be redesigned for blind and low-vision audiences.",
+          content: "My role on the team was project manager and data engineer. I designed and built the full Databricks data pipeline using the Medallion Architecture (Bronze/Silver/Gold), ingesting raw UN humanitarian data from OCHA and CBPF into governed Delta Lake tables through Unity Catalog. I engineered custom features including a Need Proxy for countries missing People in Need figures and a population fallback system. I also resolved critical platform constraints on Databricks Free Edition, including numpy dependency conflicts and serverless filesystem restrictions. Beyond the technical work, I coordinated the integration of all project components across the team, connecting the data pipeline, ML model training, vector indexing, RAG chatbot, and Streamlit frontend into a single cohesive deliverable.",
         },
       ],
-      skills: ["Unity", "Computer Vision", "Python", "User Studies"],
-      timeframe: "May 2022 – December 2022",
+      skills: ["Python", "Databricks", "Delta Lake", "MLflow", "XGBoost", "SHAP", "Streamlit", "Plotly", "Actian VectorAI", "Groq", "PySpark"],
+      timeframe: "February 2026",
       links: [
-        { label: "Amazon SURE Program", url: "https://www.amazon.science/sure" },
-        { label: "CEAL Lab", url: "https://ceal.cs.columbia.edu/" },
-        { label: "UIST '23 Paper", url: "https://doi.org/10.1145/3586183.3606830" },
-        { label: "CHI EA '23 Paper", url: "https://doi.org/10.1145/3544549.3585610" },
+        { label: "Devpost Submission", url: "https://devpost.com/software/xyz-v4zjhc?_gl=1*vuotys*_gcl_au*NzUyMDk2NDY4LjE3NzE2MzMwNzY.*_ga*NDA5NjE5NTgwLjE3NzE2MzMwNzk.*_ga_0YHJK3Y10M*czE3NzI2NjY1NDgkbzkkZzEkdDE3NzI2Njk5OTQkajI4JGwwJGgw" },
+        { label: "Streamlit App", url: "https://allocaid.streamlit.app/" },
       ],
     },
   },
   {
-    id: "ippd",
-    title: "SurgiGauge — IPPD",
-    subtitle: "Integrated Product & Process Design",
-    description: "Collaborated with Arthrex to design a precision medical measuring device capable of mm distance and one-tenth degree angle measurement.",
-    tags: ["SolidWorks", "MATLAB", "3D Printing", "Project Mgmt"],
-    venue: "UF × Arthrex",
-    period: "2023–2024",
+    id: "coop",
+    title: "COOP Data Analytics",
+    subtitle: "Data Analytics Fellowship",
+    description: "Completed two capstone projects analyzing San Jose crash data and advertising campaign performance, delivering actionable insights and recommendations.",
+    tags: ["SQL", "R", "Tableau", "Excel"],
+    venue: "COOP Careers",
+    period: "2024",
     detail: {
-      headline: "Integrated Product & Process Design",
-      intro: "The University of Florida's IPPD program gives students hands-on experience working with industry partners to design and prototype products, developing skills in teamwork, project management, and communication.",
+      headline: "COOP Careers Data Analytics Fellowship",
+      intro: "COOP Careers supports underemployed first-generation college graduates by offering mentorship, career development resources, and networking opportunities with a focus on bridging the gap for long-term career success.",
       sections: [
         {
-          title: "Team Sponsor: Arthrex",
-          content: "Arthrex is a global medical device company that specializes in orthopedics and minimally invasive surgical technology. Our team worked directly with Arthrex engineers throughout the design process.",
+          title: "The Fellowship",
+          content: "The COOP Careers Data Analytics Fellowship is a 16-week program that provides college graduates with essential data analysis skills. Participants earn the Google Data Analytics Professional Certificate and gain both technical and soft skills to prepare for entry-level data analytics roles.",
         },
         {
-          title: "Team SurgiGauge",
-          content: "We designed a general-purpose measuring device that can measure distance with millimeter precision and angle to one-tenth of a degree. The device is fitted with a display and user interface, giving users the ability to zero a depth, save a depth, and zero an angle for their measurement needs.",
+          title: "Cohort 490",
+          content: "The fellowship is structured around peer cohorts, each comprising 10-16 diverse college graduates. These cohorts meet virtually four evenings a week and are led by a team of four alumni captains who serve as coaches, mentors, and guides. Small groups of 3-4 complete multiple capstone projects together.",
         },
         {
-          title: "My Role",
-          content: "I collaborated with a team of engineering students to design, develop, and implement a patented specialized medical attachment. My role included testing and modeling materials and sensors. Throughout the project we connected with a liaison engineer from Arthrex who gave us invaluable feedback regarding our design, reports, and presentations. As a team we completed multiple design reports detailing our process and gave presentations to faculty, peers, and the sponsor company. Feedback was a very important aspect — we iteratively incorporated it for redesigns and project scope adjustments.",
+          title: "Capstone Projects",
+          content: "Our first capstone focused on analyzing crash data from the city of San Jose to support the Transportation Department in enhancing the city's road network. We highlighted a decline in reported crashes since March 2024, with high concentrations at key intersections, and recommended further investigation and safety improvements. The second capstone analyzed an advertising campaign across location, audience, creativity, and inventory to provide actionable insights. We identified high-performing segments like \"Auto Buyers\" and areas for improvement in cost per acquisition and viewability, recommending adjustments such as excluding underperforming regions and optimizing creative and inventory strategies.",
         },
       ],
-      skills: ["SolidWorks", "MATLAB", "Project Management", "3D Printing"],
-      timeframe: "August 2023 – May 2024",
+      skills: ["Excel", "SQL", "R", "Python", "Tableau"],
+      timeframe: "August 2024 - December 2024",
       links: [
-        { label: "UF IPPD Program", url: "https://www.ippd.ufl.edu/" },
-        { label: "Arthrex", url: "https://www.arthrex.com/" },
-        { label: "Team Blog", url: "https://www.ippd.ufl.edu/blogs/ay2324team01/blog-posts/" },
+        { label: "COOP Careers", url: "https://coopcareers.org/" },
+        { label: "Capstone 1 One-Pager", url: "https://docs.google.com/document/d/1zJ3-cXlAvUKyCdCzsBBIlnxH00i1_omtPwPu-6F6R64/edit?usp=sharing" },
+        { label: "Capstone 2 One-Pager", url: "https://docs.google.com/document/d/1bLRvQjclR7Lb9D1K0MymnVTrgLhlrm_0NzqL2Y1MjQs/edit?usp=sharing" },
       ],
     },
   },
   {
     id: "codedex",
     title: "Olympics Predictor",
-    subtitle: "Codédex Summer Hackathon",
+    subtitle: "Codedex Summer Hackathon",
     description: "Analyzed 11,000+ athlete records from the Tokyo Olympics to predict Paris 2024 outcomes using random forest regression, improving accuracy by 20%.",
     tags: ["Python", "NumPy", "Pandas", "Machine Learning"],
-    venue: "Codédex Hackathon",
+    venue: "Codedex Hackathon",
     period: "2024",
     detail: {
-      headline: "Codédex Summer Hackathon",
-      intro: "Codédex is a platform offering personalized coding challenges and resources to help users improve their programming skills through interactive exercises and project-based learning.",
+      headline: "Codedex Summer Hackathon",
+      intro: "Codedex is a platform offering personalized coding challenges and resources to help users improve their programming skills through interactive exercises and project-based learning.",
       sections: [
         {
           title: "The Hackathon",
@@ -143,42 +141,77 @@ const PROJECTS = [
       skills: ["Python", "NumPy", "Pandas", "Matplotlib", "VS Code", "GitHub"],
       timeframe: "July 2024",
       links: [
-        { label: "Codédex", url: "https://www.codedex.io/" },
+        { label: "Codedex", url: "https://www.codedex.io/" },
         { label: "Team Website", url: "https://2024-summer-hackathon.vercel.app/" },
       ],
     },
   },
   {
-    id: "coop",
-    title: "COOP Data Analytics",
-    subtitle: "Data Analytics Fellowship",
-    description: "Completed two capstone projects analyzing San Jose crash data and advertising campaign performance, delivering actionable insights and recommendations.",
-    tags: ["SQL", "R", "Tableau", "Excel"],
-    venue: "COOP Careers",
-    period: "2024",
+    id: "ippd",
+    title: "SurgiGauge - IPPD",
+    subtitle: "Integrated Product & Process Design",
+    description: "Collaborated with Arthrex to design a precision medical measuring device capable of mm distance and one-tenth degree angle measurement.",
+    tags: ["SolidWorks", "MATLAB", "3D Printing", "Project Mgmt"],
+    venue: "UF x Arthrex",
+    period: "2023-2024",
     detail: {
-      headline: "COOP Careers Data Analytics Fellowship",
-      intro: "COOP Careers supports underemployed first-generation college graduates by offering mentorship, career development resources, and networking opportunities — focusing on bridging the social capital gap for long-term career success.",
+      headline: "Integrated Product & Process Design",
+      intro: "The University of Florida's IPPD program gives students hands-on experience working with industry partners to design and prototype products, developing skills in teamwork, project management, and communication.",
       sections: [
         {
-          title: "The Fellowship",
-          content: "The COOP Careers Data Analytics Fellowship is a 16-week program that provides college graduates with essential data analysis skills. Participants earn the Google Data Analytics Professional Certificate and gain both technical and soft skills to prepare for entry-level data analytics roles.",
+          title: "Team Sponsor: Arthrex",
+          content: "Arthrex is a global medical device company that specializes in orthopedics and minimally invasive surgical technology. Our team worked directly with Arthrex engineers throughout the design process.",
         },
         {
-          title: "Cohort 490",
-          content: "The fellowship is structured around peer cohorts, each comprising 10–16 diverse college graduates. These cohorts meet virtually four evenings a week and are led by a team of four alumni captains who serve as coaches, mentors, and guides. Small groups of 3–4 complete multiple capstone projects together.",
+          title: "Team SurgiGauge",
+          content: "We designed a general-purpose measuring device that can measure distance with millimeter precision and angle to one-tenth of a degree. The device is fitted with a display and user interface, giving users the ability to zero a depth, save a depth, and zero an angle for their measurement needs.",
         },
         {
-          title: "Capstone Projects",
-          content: "Our first capstone focused on analyzing crash data from the city of San Jose to support the Transportation Department in enhancing the city's road network. We highlighted a decline in reported crashes since March 2024, with high concentrations at key intersections, and recommended further investigation and safety improvements. The second capstone analyzed an advertising campaign across location, audience, creativity, and inventory to provide actionable insights. We identified high-performing segments like \"Auto Buyers\" and areas for improvement in cost per acquisition and viewability, recommending adjustments such as excluding underperforming regions and optimizing creative and inventory strategies.",
+          title: "My Role",
+          content: "I collaborated with a team of engineering students to design, develop, and implement a patented specialized medical attachment. My role included testing and modeling materials and sensors. Throughout the project we connected with a liaison engineer from Arthrex who gave us invaluable feedback regarding our design, reports, and presentations. As a team we completed multiple design reports detailing our process and gave presentations to faculty, peers, and the sponsor company. Feedback was a very important aspect, we iteratively incorporated it for redesigns and project scope adjustments.",
         },
       ],
-      skills: ["Excel", "SQL", "R", "Python", "Tableau"],
-      timeframe: "August 2024 – December 2024",
+      skills: ["SolidWorks", "MATLAB", "Project Management", "3D Printing"],
+      timeframe: "August 2023 - May 2024",
       links: [
-        { label: "COOP Careers", url: "https://coopcareers.org/" },
-        { label: "Capstone 1 One-Pager", url: "https://docs.google.com/document/d/1zJ3-cXlAvUKyCdCzsBBIlnxH00i1_omtPwPu-6F6R64/edit?usp=sharing" },
-        { label: "Capstone 2 One-Pager", url: "https://docs.google.com/document/d/1bLRvQjclR7Lb9D1K0MymnVTrgLhlrm_0NzqL2Y1MjQs/edit?usp=sharing" },
+        { label: "UF IPPD Program", url: "https://www.ippd.ufl.edu/" },
+        { label: "Arthrex", url: "https://www.arthrex.com/" },
+        { label: "Team Blog", url: "https://www.ippd.ufl.edu/blogs/ay2324team01/blog-posts/" },
+      ],
+    },
+  },
+  {
+    id: "sure",
+    title: "Amazon SURE",
+    subtitle: "Summer Undergraduate Research Experience",
+    description: "Designed an immersive audio system for blind and low-vision tennis viewers at Columbia's CEAL lab. Published at UIST '23 and CHI EA '23.",
+    tags: ["Unity", "Computer Vision", "Python", "HCI"],
+    venue: "Columbia University",
+    period: "2022-2023",
+    detail: {
+      headline: "Summer Undergraduate Research Experience",
+      intro: "The Amazon Summer Undergraduate Research Experience (SURE) seeks to boost diversity in science and engineering by offering students from underrepresented communities a summer research opportunity at top-tier universities.",
+      sections: [
+        {
+          title: "The Computer Enabled Abilities Laboratory",
+          content: "The Computer Enabled Abilities Laboratory (CEAL) at Columbia University develops technologies to assist individuals with disabilities, primarily focusing on blind or low-vision people. By integrating computer science, engineering, and design, CEAL creates innovative tools that enhance accessibility, communication, and mobility, promoting independence and improving quality of life.",
+        },
+        {
+          title: "My Role",
+          content: "This was a full-time research opportunity as an undergraduate. I worked on designing a system to enhance tennis gameplay for blind and low-vision users. This project led to multiple publications in human-computer interaction (HCI) and reinforced my commitment to supporting individuals with disabilities. Facilitating user studies gave me firsthand insight into my impact and fueled my purpose to help others through research. Transitioning from a mechanical engineering background to a computer science lab challenged me, building resilience and adaptability for continual learning and development.",
+        },
+        {
+          title: "Publications",
+          content: "This research resulted in two publications: \"Front Row\" at UIST '23 , an immersive audio system that automatically generates spatial representations of tennis broadcasts for blind viewers, and \"Towards Accessible Sports Broadcasts\" at CHI EA '23 , exploring how sports broadcasts can be redesigned for blind and low-vision audiences.",
+        },
+      ],
+      skills: ["Unity", "Computer Vision", "Python", "User Studies"],
+      timeframe: "May 2022 - December 2022",
+      links: [
+        { label: "Amazon SURE Program", url: "https://www.amazon.science/sure" },
+        { label: "CEAL Lab", url: "https://ceal.cs.columbia.edu/" },
+        { label: "UIST '23 Paper", url: "https://doi.org/10.1145/3586183.3606830" },
+        { label: "CHI EA '23 Paper", url: "https://doi.org/10.1145/3544549.3585610" },
       ],
     },
   },
@@ -195,7 +228,10 @@ const PROJECTS = [
   },
 ];
 
-/* ─── THEMES ─── */
+// Only projects with detail pages (used for prev/next navigation)
+const NAV_PROJECTS = PROJECTS.filter((p) => p.detail);
+
+/* --- THEMES --- */
 const themes = {
   dark: {
     bg: "#111110", card: "rgba(255,255,255,0.03)", cardBorder: "rgba(255,255,255,0.08)",
@@ -225,7 +261,7 @@ const themes = {
   },
 };
 
-/* ─── UTILS ─── */
+/* --- UTILS --- */
 function useInView(threshold = 0.1) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -261,7 +297,7 @@ function ThemeToggle({ isDark, onToggle }) {
   );
 }
 
-/* ─── EXPERIENCE CARD ─── */
+/* --- EXPERIENCE CARD --- */
 function ExperienceCard({ item, index, t }) {
   const [open, setOpen] = useState(index === 0);
   return (
@@ -293,7 +329,7 @@ function ExperienceCard({ item, index, t }) {
   );
 }
 
-/* ─── PROJECT CARD ─── */
+/* --- PROJECT CARD --- */
 function ProjectCard({ project, index, t, onOpen }) {
   const [hovered, setHovered] = useState(false);
   const isPlaceholder = project.isPlaceholder;
@@ -343,13 +379,43 @@ function ProjectCard({ project, index, t, onOpen }) {
   );
 }
 
-/* ─── PROJECT DETAIL PAGE ─── */
-function ProjectPage({ project, t, onBack }) {
+/* --- PREV/NEXT BUTTON (used at bottom of project detail pages) --- */
+function PrevNextBtn({ direction, project, t, onClick }) {
+  const [hovered, setHovered] = useState(false);
+  const isPrev = direction === "prev";
+  return (
+    <div
+      onClick={onClick}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        background: hovered ? t.cardHover : t.card,
+        border: `1px solid ${hovered ? t.cardBorderHover : t.cardBorder}`,
+        borderRadius: "12px", padding: "20px 24px", cursor: "pointer",
+        transition: "all 0.3s ease", flex: 1, minWidth: 0,
+        textAlign: isPrev ? "left" : "right",
+      }}>
+      <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: t.textFaintest, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "8px", display: "flex", alignItems: "center", gap: "6px", justifyContent: isPrev ? "flex-start" : "flex-end" }}>
+        {isPrev && <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M11 7H3M3 7L7 3M3 7L7 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+        {isPrev ? "Previous" : "Next"}
+        {!isPrev && <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+      </div>
+      <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", fontWeight: 600, color: t.text }}>{project.title}</div>
+    </div>
+  );
+}
+
+/* --- PROJECT DETAIL PAGE --- */
+function ProjectPage({ project, t, onBack, onNavigate }) {
   const d = project.detail;
-  useEffect(() => { window.scrollTo(0, 0); }, []);
+  const currentIndex = NAV_PROJECTS.findIndex((p) => p.id === project.id);
+  const prevProject = currentIndex > 0 ? NAV_PROJECTS[currentIndex - 1] : null;
+  const nextProject = currentIndex < NAV_PROJECTS.length - 1 ? NAV_PROJECTS[currentIndex + 1] : null;
+
+  useEffect(() => { window.scrollTo(0, 0); }, [project.id]);
 
   return (
-    <div style={{ padding: "120px 40px 80px", maxWidth: "860px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+    <div className="section-padding" style={{ paddingTop: "120px", paddingBottom: "80px", maxWidth: "860px", margin: "0 auto", position: "relative", zIndex: 1 }}>
       {/* Back button */}
       <div onClick={onBack} style={{ display: "inline-flex", alignItems: "center", gap: "8px", cursor: "pointer", fontFamily: "'DM Mono', monospace", fontSize: "13px", color: t.accent, marginBottom: "48px", transition: "opacity 0.2s" }}
         onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.7"; }}
@@ -362,7 +428,7 @@ function ProjectPage({ project, t, onBack }) {
       <FadeIn>
         <div style={{ marginBottom: "16px" }}>
           <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: t.accent, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "12px" }}>{project.venue} &middot; {project.period}</div>
-          <h1 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(32px, 5vw, 48px)", fontWeight: 400, color: t.text, lineHeight: 1.15, marginBottom: "8px" }}>{project.title}</h1>
+          <h1 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(28px, 5vw, 48px)", fontWeight: 400, color: t.text, lineHeight: 1.15, marginBottom: "8px" }}>{project.title}</h1>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "18px", color: t.textFaint, lineHeight: 1.5 }}>{d.headline}</p>
         </div>
       </FadeIn>
@@ -419,11 +485,25 @@ function ProjectPage({ project, t, onBack }) {
           </div>
         </FadeIn>
       )}
+
+      {/* Prev / Next project navigation */}
+      <div className="prev-next-nav" style={{ display: "flex", gap: "16px", marginTop: "64px", borderTop: `1px solid ${t.cardBorder}`, paddingTop: "40px" }}>
+        {prevProject ? (
+          <PrevNextBtn direction="prev" project={prevProject} t={t} onClick={() => onNavigate(prevProject.id)} />
+        ) : (
+          <div style={{ flex: 1 }} />
+        )}
+        {nextProject ? (
+          <PrevNextBtn direction="next" project={nextProject} t={t} onClick={() => onNavigate(nextProject.id)} />
+        ) : (
+          <div style={{ flex: 1 }} />
+        )}
+      </div>
     </div>
   );
 }
 
-/* ─── MAIN APP ─── */
+/* --- MAIN APP --- */
 export default function Portfolio() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
@@ -443,7 +523,6 @@ export default function Portfolio() {
       setCurrentProject(proj && proj.detail ? proj : null);
     };
     window.addEventListener("popstate", handlePop);
-    // Check on load
     handlePop();
     return () => window.removeEventListener("popstate", handlePop);
   }, []);
@@ -456,9 +535,13 @@ export default function Portfolio() {
     }
   };
 
+  // FIX: "Back to Projects" now scrolls to the projects section instead of the top
   const closeProject = () => {
     setCurrentProject(null);
     window.history.pushState(null, "", window.location.pathname);
+    setTimeout(() => {
+      document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+    }, 50);
   };
 
   useEffect(() => { setTimeout(() => setHeroVisible(true), 100); }, []);
@@ -494,22 +577,36 @@ export default function Portfolio() {
         .grid-bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; background-image: linear-gradient(${t.gridLine} 1px, transparent 1px), linear-gradient(90deg, ${t.gridLine} 1px, transparent 1px); background-size: 60px 60px; }
         .desktop-nav { display: flex; }
         .mobile-burger { display: none; }
+        /* MOBILE: responsive padding and photo sizing */
+        .section-padding { padding-left: 40px; padding-right: 40px; }
+        .hero-photo-container { width: 500px; height: 520px; }
+        .hero-photo { width: 400px; height: 400px; }
+        .about-text { font-size: 20px; }
         @media (max-width: 640px) {
           .desktop-nav { display: none !important; }
           .mobile-burger { display: flex !important; }
-          .hero-grid { flex-direction: column-reverse !important; text-align: center !important; }
+          .hero-grid { flex-direction: column-reverse !important; text-align: center !important; gap: 32px !important; }
           .hero-grid .hero-text { align-items: center !important; }
           .projects-grid { grid-template-columns: 1fr !important; }
           .socials { justify-content: center !important; }
+          .prev-next-nav { flex-direction: column !important; }
+          .section-padding { padding-left: 20px !important; padding-right: 20px !important; }
+          .hero-photo-container { width: 100% !important; max-width: 280px !important; height: auto !important; aspect-ratio: 1 / 1.04; }
+          .hero-photo { width: 85% !important; height: auto !important; aspect-ratio: 1 / 1; }
+          .about-text { font-size: 16px !important; }
         }
-        @media (min-width: 641px) and (max-width: 1024px) { .projects-grid { grid-template-columns: 1fr 1fr !important; } }
+        @media (min-width: 641px) and (max-width: 1024px) {
+          .projects-grid { grid-template-columns: 1fr 1fr !important; }
+          .hero-photo-container { width: 320px !important; height: 340px !important; }
+          .hero-photo { width: 260px !important; height: 260px !important; }
+        }
         a { color: inherit; }
       `}</style>
 
       <div className="grid-bg" />
 
       {/* NAV */}
-      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, padding: "0 40px", height: "60px", display: "flex", justifyContent: "space-between", alignItems: "center", background: scrolled ? t.navBg : "transparent", backdropFilter: scrolled ? "blur(16px)" : "none", borderBottom: scrolled ? `1px solid ${t.navBorder}` : "1px solid transparent", transition: "all 0.4s ease" }}>
+      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, padding: "0 max(20px, env(safe-area-inset-left, 20px))", height: "60px", display: "flex", justifyContent: "space-between", alignItems: "center", background: scrolled ? t.navBg : "transparent", backdropFilter: scrolled ? "blur(16px)" : "none", borderBottom: scrolled ? `1px solid ${t.navBorder}` : "1px solid transparent", transition: "all 0.4s ease" }}>
         <div style={{ cursor: "pointer", zIndex: 101 }} onClick={() => scrollTo("home")}>
           <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", fontWeight: 600, color: t.text }}>Conrad Wyrick</span>
         </div>
@@ -542,16 +639,16 @@ export default function Portfolio() {
         </div>
       )}
 
-      {/* ─── PROJECT DETAIL VIEW ─── */}
+      {/* --- PROJECT DETAIL VIEW --- */}
       {currentProject ? (
-        <ProjectPage project={currentProject} t={t} onBack={closeProject} />
+        <ProjectPage project={currentProject} t={t} onBack={closeProject} onNavigate={openProject} />
       ) : (
         <>
           {/* HERO */}
-          <section id="home" style={{ minHeight: "100vh", display: "flex", alignItems: "center", padding: "100px 40px 60px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <section id="home" className="section-padding" style={{ minHeight: "100vh", display: "flex", alignItems: "center", paddingTop: "100px", paddingBottom: "60px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
             <div className="hero-grid" style={{ display: "flex", gap: "60px", alignItems: "center", width: "100%", opacity: heroVisible ? 1 : 0, transform: heroVisible ? "translateY(0)" : "translateY(30px)", transition: "all 0.9s cubic-bezier(0.16,1,0.3,1) 0.15s" }}>
               <div className="hero-text" style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-                <h1 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(40px, 6vw, 64px)", fontWeight: 400, lineHeight: 1.1, color: t.text, marginBottom: "16px" }}>Hi, I'm Conrad.</h1>
+                <h1 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(36px, 6vw, 64px)", fontWeight: 400, lineHeight: 1.1, color: t.text, marginBottom: "16px" }}>Hi, I'm Conrad.</h1>
                 <p style={{ fontSize: "17px", color: t.textFaint, lineHeight: 1.5, marginBottom: "6px" }}>Mechanical Engineer and Researcher</p>
                 <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", color: t.textFaintest, marginBottom: "28px" }}>Research Analyst @ S&P Global</p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "24px" }}>
@@ -574,38 +671,43 @@ export default function Portfolio() {
                 </div>
               </div>
               <div style={{ flexShrink: 0 }}>
-                <div style={{ width: "200px", height: "220px", borderRadius: "18px", background: t.card, border: `1px solid ${t.cardBorder}`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "16px", transition: "all 0.4s ease" }}>
-                  <div style={{ width: "100px", height: "100px", borderRadius: "50%", background: "linear-gradient(135deg, #6B8F71, #8B6B8F)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Instrument Serif', serif", fontSize: "36px", color: "#fff" }}>C</div>
+                <div className="hero-photo-container" style={{ borderRadius: "18px", background: t.card, border: `1px solid ${t.cardBorder}`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "16px", transition: "all 0.4s ease" }}>
+                  <img className="hero-photo" src="/Photo_with_dad.jpg" alt="Conrad Wyrick" style={{ borderRadius: "25%", objectFit: "cover" }} />
+                  {/* BACKUP: Gradient circle avatar with initial - uncomment to use instead of photo
+                  <div style={{ width: "400px", height: "400px", borderRadius: "50%", background: "linear-gradient(135deg, #6B8F71, #8B6B8F)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Instrument Serif', serif", fontSize: "36px", color: "#fff" }}>C</div>
+                  */}
+                  {/* BACKUP: Text labels under photo showing degree and school
                   <div style={{ textAlign: "center" }}>
                     <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", color: t.textFaint, textTransform: "uppercase", letterSpacing: "0.08em" }}>Mechanical Engineering</div>
                     <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", color: t.textFaintest, marginTop: "2px" }}>University of Florida</div>
                   </div>
+                  */}
                 </div>
               </div>
             </div>
           </section>
 
           {/* ABOUT */}
-          <section id="about" style={{ padding: "100px 40px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <section id="about" className="section-padding" style={{ paddingTop: "100px", paddingBottom: "100px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
             <FadeIn><h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "36px", fontWeight: 400, textAlign: "center", marginBottom: "40px", color: t.text }}>About Me</h2></FadeIn>
             <FadeIn delay={0.1}>
               <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-                <p style={{ fontSize: "15px", color: t.textMuted, lineHeight: 1.8, marginBottom: "16px" }}>I'm a Mechanical Engineering graduate from the University of Florida with certificates in Engineering Innovation and Engineering Leadership. I'm passionate about building technology that serves people — from accessible systems for blind and low-vision users to data-driven insights on the global energy transition.</p>
-                <p style={{ fontSize: "15px", color: t.textMuted, lineHeight: 1.8 }}>Currently, I'm a Research Analyst at S&P Global in an 18-month rotational program focused on commodities, sustainability, and energy markets. When I'm not modeling data, you can find me reading about defense tech, tinkering with side projects, or exploring new places.</p>
+                <p className="about-text" style={{ color: t.textMuted, lineHeight: 1.8, marginBottom: "16px" }}>I'm a Mechanical Engineering graduate from the University of Florida with certificates in Engineering Innovation and Engineering Leadership.  I'm passionate about building technology that serves people, from accessible systems to data-driven insights on global energy.</p>
+                <p className="about-text" style={{ color: t.textMuted, lineHeight: 1.8 }}>Currently, I'm a Research Analyst at S&P Global in an 18-month rotational program focused on commodities, sustainability, and energy markets. When I'm not modeling data, you can find me reading about tech, tinkering with side projects, or exploring new places.</p>
               </div>
             </FadeIn>
           </section>
 
           {/* EXPERIENCE */}
-          <section id="experience" style={{ padding: "100px 40px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-            <FadeIn><h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "36px", fontWeight: 400, textAlign: "center", marginBottom: "48px", color: t.text }}>Experience</h2></FadeIn>
+          <section id="experience" className="section-padding" style={{ paddingTop: "100px", paddingBottom: "100px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+            <FadeIn><h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "36px", fontWeight: 400, textAlign: "center", marginBottom: "48px", color: t.text }}>Recent Experience</h2></FadeIn>
             <div style={{ maxWidth: "860px", margin: "0 auto" }}>
               {EXPERIENCE.map((item, i) => <ExperienceCard key={i} item={item} index={i} t={t} />)}
             </div>
           </section>
 
           {/* PUBLICATIONS */}
-          <section style={{ padding: "0 40px 40px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <section className="section-padding" style={{ paddingTop: "0", paddingBottom: "40px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
             <FadeIn>
               <div style={{ maxWidth: "860px", margin: "0 auto", padding: "28px", background: t.pubCardBg, border: `1px solid ${t.pubCardBorder}`, borderRadius: "14px" }}>
                 <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 600, color: t.text, marginBottom: "16px", textTransform: "uppercase", letterSpacing: "0.06em" }}>Publications</h3>
@@ -620,7 +722,7 @@ export default function Portfolio() {
           </section>
 
           {/* PROJECTS */}
-          <section id="projects" style={{ padding: "100px 40px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <section id="projects" className="section-padding" style={{ paddingTop: "100px", paddingBottom: "100px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
             <FadeIn><h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "36px", fontWeight: 400, textAlign: "center", marginBottom: "48px", color: t.text }}>Projects</h2></FadeIn>
             <div className="projects-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px", gridAutoRows: "1fr" }}>
               {PROJECTS.map((p, i) => <ProjectCard key={p.id} project={p} index={i} t={t} onOpen={openProject} />)}
@@ -628,7 +730,7 @@ export default function Portfolio() {
           </section>
 
           {/* FOOTER */}
-          <footer style={{ padding: "40px", maxWidth: "1200px", margin: "0 auto", borderTop: `1px solid ${t.navBorder}`, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", position: "relative", zIndex: 1 }}>
+          <footer className="section-padding" style={{ paddingTop: "40px", paddingBottom: "40px", maxWidth: "1200px", margin: "0 auto", borderTop: `1px solid ${t.navBorder}`, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", position: "relative", zIndex: 1 }}>
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: t.footerText }}>&copy; 2026 Conrad Wyrick</span>
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: t.footerText }}>Built with intention</span>
           </footer>
