@@ -603,7 +603,8 @@ export default function Portfolio() {
         a { color: inherit; }
       `}</style>
 
-      <div className="grid-bg" />
+      {/* BACKUP: Grid line overlay on background
+       <div className="grid-bg" /> */}
 
       {/* NAV */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, padding: "0 max(20px, env(safe-area-inset-left, 20px))", height: "60px", display: "flex", justifyContent: "space-between", alignItems: "center", background: scrolled ? t.navBg : "transparent", backdropFilter: scrolled ? "blur(16px)" : "none", borderBottom: scrolled ? `1px solid ${t.navBorder}` : "1px solid transparent", transition: "all 0.4s ease" }}>
