@@ -6,7 +6,7 @@ const EXPERIENCE = [
   {
     role: "Research Analyst",
     company: "S&P Global",
-    location: "Houston,TX",
+    location: "Houston, TX",
     period: "2024 - Present",
     description: "Collaborating with cross-functional teams to analyze energy market dynamics, automate data workflows, and develop visual analytics tools using Python, Excel, and Alteryx.",
     tags: ["Data Analysis", "Energy", "Commodities", "Modeling"],
@@ -299,7 +299,7 @@ function ThemeToggle({ isDark, onToggle }) {
 
 /* --- EXPERIENCE CARD --- */
 function ExperienceCard({ item, index, t }) {
-  const [open, setOpen] = useState(index === 0);
+  const [open, setOpen] = useState(false);
   return (
     <FadeIn delay={index * 0.08}>
       <div onClick={() => setOpen(!open)}
