@@ -653,9 +653,9 @@ export default function Portfolio() {
                 <p style={{ fontSize: "17px", color: t.textFaint, lineHeight: 1.5, marginBottom: "6px" }}>Mechanical Engineer and Researcher</p>
                 <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", color: t.textFaintest, marginBottom: "28px" }}>Research Analyst @ S&P Global</p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "24px" }}>
-                  <a href="https://drive.google.com/file/d/1n8s-97f6tOzPW4YVGgMFWu-mYoTmQUO7/view" target="_blank" rel="noopener noreferrer"
+                  <a href="/Conrad_Wyrick_Resume.pdf" target="_blank" rel="noopener noreferrer"
                     style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", fontWeight: 500, padding: "10px 24px", borderRadius: "8px", background: t.btnFill, color: t.btnFillText, textDecoration: "none", transition: "all 0.2s ease" }}>Resume</a>
-                  <a href="https://drive.google.com/file/d/1K41nsEG7oa-6URBfHDAwgTgTYKq-jpuW/view" target="_blank" rel="noopener noreferrer"
+                  <a href="/Conrad_Wyrick_CV.pdf" target="_blank" rel="noopener noreferrer"
                     style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", fontWeight: 500, padding: "10px 24px", borderRadius: "8px", background: "transparent", color: t.text, border: `1px solid ${t.btnOutlineBorder}`, textDecoration: "none", transition: "all 0.2s ease" }}
                     onMouseEnter={(e) => { e.currentTarget.style.borderColor = t.btnOutlineBorderHover; }}
                     onMouseLeave={(e) => { e.currentTarget.style.borderColor = t.btnOutlineBorder; }}>CV</a>
