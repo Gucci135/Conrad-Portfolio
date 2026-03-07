@@ -14,7 +14,7 @@ const EXPERIENCE = [
     color: "#6B8F71",
   },
   {
-    role: "SVMP Fellow",
+    role: "Summer Vensure in Management Program (SVMP) Fellow",
     company: "Harvard University",
     location: "Cambridge, MA",
     period: "Summer 2024",
@@ -24,7 +24,7 @@ const EXPERIENCE = [
     color: "#8B6B8F",
   },
   {
-    role: "University of Florida IPPD",
+    role: "Integrated Product & Process Design (IPPD)",
     company: "University of Florida and Arthrex",
     location: "Gainesville, FL",
     period: "2023 - 2024",
@@ -148,14 +148,14 @@ const PROJECTS = [
   },
   {
     id: "ippd",
-    title: "SurgiGauge - IPPD",
-    subtitle: "Integrated Product & Process Design",
+    title: "Integrated Product & Process Design (IPPD)",
+    subtitle: "Senior Design Project",
     description: "Collaborated with Arthrex to design a precision medical measuring device capable of mm distance and one-tenth degree angle measurement.",
     tags: ["SolidWorks", "MATLAB", "3D Printing", "Project Mgmt"],
     venue: "UF x Arthrex",
     period: "2023-2024",
     detail: {
-      headline: "Integrated Product & Process Design",
+      headline: "Working with the University of Florida and Arthrex engineers",
       intro: "The University of Florida's IPPD program gives students hands-on experience working with industry partners to design and prototype products, developing skills in teamwork, project management, and communication.",
       sections: [
         {
@@ -168,7 +168,7 @@ const PROJECTS = [
         },
         {
           title: "My Role",
-          content: "I collaborated with a team of engineering students to design, develop, and implement a patented specialized medical attachment. My role included testing and modeling materials and sensors. Throughout the project we connected with a liaison engineer from Arthrex who gave us invaluable feedback regarding our design, reports, and presentations. As a team we completed multiple design reports detailing our process and gave presentations to faculty, peers, and the sponsor company. Feedback was a very important aspect, we iteratively incorporated it for redesigns and project scope adjustments.",
+          content: "I collaborated with a team of engineering students to design, develop, and implement a patented specialized medical attachment. My role included testing and modeling materials and sensors. Throughout the project we connected with engineers from Arthrex who gave us invaluable feedback regarding our design, reports, and presentations. As a team we completed multiple design reports detailing our process and gave presentations to faculty, peers, and the sponsor company. Feedback was a very important aspect, we iteratively incorporated it for redesigns and project scope adjustments.",
         },
       ],
       skills: ["SolidWorks", "MATLAB", "Project Management", "3D Printing"],
@@ -182,8 +182,8 @@ const PROJECTS = [
   },
   {
     id: "sure",
-    title: "Amazon SURE",
-    subtitle: "Summer Undergraduate Research Experience",
+    title: "Amazon Summer Undergraduate Research Experience",
+    subtitle: "Computer Science",
     description: "Designed an immersive audio system for blind and low-vision tennis viewers at Columbia's CEAL lab. Published at UIST '23 and CHI EA '23.",
     tags: ["Unity", "Computer Vision", "Python", "HCI"],
     venue: "Columbia University",
@@ -208,8 +208,8 @@ const PROJECTS = [
       skills: ["Unity", "Computer Vision", "Python", "User Studies"],
       timeframe: "May 2022 - December 2022",
       links: [
+        { label: "More about the Project", url: "https://ceal.cs.columbia.edu/tennisvideoa11y/" },
         { label: "Amazon SURE Program", url: "https://www.amazon.science/sure" },
-        { label: "CEAL Lab", url: "https://ceal.cs.columbia.edu/" },
         { label: "UIST '23 Paper", url: "https://doi.org/10.1145/3586183.3606830" },
         { label: "CHI EA '23 Paper", url: "https://doi.org/10.1145/3544549.3585610" },
       ],
@@ -219,10 +219,10 @@ const PROJECTS = [
     id: "placeholder",
     title: "Coming Soon",
     subtitle: "New project in progress",
-    description: "Something new is in the works. Check back soon for details on this upcoming project.",
+    description: "Something new is always in the works. Check back soon for details on this upcoming project.",
     tags: [],
     venue: "TBD",
-    period: "2025",
+    period: "2026",
     isPlaceholder: true,
     detail: null,
   },
@@ -663,11 +663,11 @@ export default function Portfolio() {
                 <div className="socials" style={{ display: "flex", gap: "16px" }}>
                   <a href="https://www.linkedin.com/in/conradwyrick/" target="_blank" rel="noopener noreferrer" style={{ color: t.socialIcon, transition: "color 0.2s" }}
                     onMouseEnter={(e) => { e.currentTarget.style.color = t.text; }} onMouseLeave={(e) => { e.currentTarget.style.color = t.socialIcon; }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                   </a>
                   <a href="mailto:contact@conradwyrick.com" style={{ color: t.socialIcon, transition: "color 0.2s" }}
                     onMouseEnter={(e) => { e.currentTarget.style.color = t.text; }} onMouseLeave={(e) => { e.currentTarget.style.color = t.socialIcon; }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
                   </a>
                 </div>
               </div>
@@ -693,17 +693,17 @@ export default function Portfolio() {
             <FadeIn><h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "36px", fontWeight: 400, textAlign: "center", marginBottom: "40px", color: t.text }}>About Me</h2></FadeIn>
             <FadeIn delay={0.1}>
               <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-                <p className="about-text" style={{ color: t.textMuted, lineHeight: 1.8, marginBottom: "16px" }}>I'm a Mechanical Engineering graduate from the University of Florida with certificates in Engineering Innovation and Engineering Leadership.  I'm passionate about building technology that serves people, from accessible systems to data-driven insights on global energy.</p>
-                <p className="about-text" style={{ color: t.textMuted, lineHeight: 1.8 }}>Currently, I'm a Research Analyst at S&P Global in an 18-month rotational program focused on commodities, sustainability, and energy markets. When I'm not modeling data, you can find me reading about tech, tinkering with side projects, or exploring new places.</p>
+                <p className="about-text" style={{ color: t.textMuted, lineHeight: 1.8, marginBottom: "16px" }}>I'm a Mechanical Engineering graduate from the University of Florida who is passionate about building technology that serves people. I've worked on accessibility tools for the blind/low-vision, medical device design, and humanitarian aid forecasting.</p>
+                <p className="about-text" style={{ color: t.textMuted, lineHeight: 1.8 }}>Currently, I'm a Research Analyst at S&P Global in an 18-month rotational program focused on energy market forecasting, seaborn oil transits, and midstream oil markets. When I'm not analyzing data, you can find me reading about the recent news on AI, exploring engineering design, or planning my next project.</p>
               </div>
             </FadeIn>
           </section>
 
-          {/* EXPERIENCE */}
-          <section id="experience" className="section-padding" style={{ paddingTop: "100px", paddingBottom: "100px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-            <FadeIn><h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "36px", fontWeight: 400, textAlign: "center", marginBottom: "48px", color: t.text }}>Recent Experience</h2></FadeIn>
-            <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-              {EXPERIENCE.map((item, i) => <ExperienceCard key={i} item={item} index={i} t={t} />)}
+          {/* PROJECTS */}
+          <section id="projects" className="section-padding" style={{ paddingTop: "100px", paddingBottom: "100px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+            <FadeIn><h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "36px", fontWeight: 400, textAlign: "center", marginBottom: "48px", color: t.text }}>Projects</h2></FadeIn>
+            <div className="projects-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px", gridAutoRows: "1fr" }}>
+              {PROJECTS.map((p, i) => <ProjectCard key={p.id} project={p} index={i} t={t} onOpen={openProject} />)}
             </div>
           </section>
 
@@ -722,11 +722,11 @@ export default function Portfolio() {
             </FadeIn>
           </section>
 
-          {/* PROJECTS */}
-          <section id="projects" className="section-padding" style={{ paddingTop: "100px", paddingBottom: "100px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-            <FadeIn><h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "36px", fontWeight: 400, textAlign: "center", marginBottom: "48px", color: t.text }}>Projects</h2></FadeIn>
-            <div className="projects-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px", gridAutoRows: "1fr" }}>
-              {PROJECTS.map((p, i) => <ProjectCard key={p.id} project={p} index={i} t={t} onOpen={openProject} />)}
+          {/* EXPERIENCE */}
+          <section id="experience" className="section-padding" style={{ paddingTop: "100px", paddingBottom: "100px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+            <FadeIn><h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "36px", fontWeight: 400, textAlign: "center", marginBottom: "48px", color: t.text }}>Recent Experience</h2></FadeIn>
+            <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+              {EXPERIENCE.map((item, i) => <ExperienceCard key={i} item={item} index={i} t={t} />)}
             </div>
           </section>
 
