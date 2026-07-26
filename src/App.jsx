@@ -14,17 +14,17 @@ const EXPERIENCE = [
     color: "#6B8F71",
   },
   {
-    role: "Summer Vensure in Management Program (SVMP) Fellow",
+    role: "SVMP Fellow",
     company: "Harvard University",
     location: "Cambridge, MA",
     period: "Summer 2024",
     description: "Engaged in case-method analysis of real-world business scenarios alongside a diverse cohort of peers, developing critical thinking, decision-making, and leadership skills through discussions on strategy, entrepreneurship, and much more",
-    tags: ["Strategy", "Buinsess", "Policy"],
+    tags: ["Strategy", "Business", "Policy"],
     icon: "H",
     color: "#8B6B8F",
   },
   {
-    role: "Integrated Product & Process Design (IPPD)",
+    role: "University of Florida IPPD",
     company: "University of Florida and Arthrex",
     location: "Gainesville, FL",
     period: "2023 - 2024",
@@ -148,14 +148,14 @@ const PROJECTS = [
   },
   {
     id: "ippd",
-    title: "Integrated Product & Process Design (IPPD)",
-    subtitle: "Senior Design Project",
+    title: "SurgiGauge - IPPD",
+    subtitle: "Integrated Product & Process Design",
     description: "Collaborated with Arthrex to design a precision medical measuring device capable of mm distance and one-tenth degree angle measurement.",
     tags: ["SolidWorks", "MATLAB", "3D Printing", "Project Mgmt"],
     venue: "UF x Arthrex",
     period: "2023-2024",
     detail: {
-      headline: "Working with the University of Florida and Arthrex engineers",
+      headline: "Integrated Product & Process Design",
       intro: "The University of Florida's IPPD program gives students hands-on experience working with industry partners to design and prototype products, developing skills in teamwork, project management, and communication.",
       sections: [
         {
@@ -168,7 +168,7 @@ const PROJECTS = [
         },
         {
           title: "My Role",
-          content: "I collaborated with a team of engineering students to design, develop, and implement a patented specialized medical attachment. My role included testing and modeling materials and sensors. Throughout the project we connected with engineers from Arthrex who gave us invaluable feedback regarding our design, reports, and presentations. As a team we completed multiple design reports detailing our process and gave presentations to faculty, peers, and the sponsor company. Feedback was a very important aspect, we iteratively incorporated it for redesigns and project scope adjustments.",
+          content: "I collaborated with a team of engineering students to design, develop, and implement a patented specialized medical attachment. My role included testing and modeling materials and sensors. Throughout the project we connected with a liaison engineer from Arthrex who gave us invaluable feedback regarding our design, reports, and presentations. As a team we completed multiple design reports detailing our process and gave presentations to faculty, peers, and the sponsor company. Feedback was a very important aspect, we iteratively incorporated it for redesigns and project scope adjustments.",
         },
       ],
       skills: ["SolidWorks", "MATLAB", "Project Management", "3D Printing"],
@@ -182,8 +182,8 @@ const PROJECTS = [
   },
   {
     id: "sure",
-    title: "Amazon Summer Undergraduate Research Experience",
-    subtitle: "Computer Science",
+    title: "Amazon SURE",
+    subtitle: "Summer Undergraduate Research Experience",
     description: "Designed an immersive audio system for blind and low-vision tennis viewers at Columbia's CEAL lab. Published at UIST '23 and CHI EA '23.",
     tags: ["Unity", "Computer Vision", "Python", "HCI"],
     venue: "Columbia University",
@@ -208,8 +208,8 @@ const PROJECTS = [
       skills: ["Unity", "Computer Vision", "Python", "User Studies"],
       timeframe: "May 2022 - December 2022",
       links: [
-        { label: "More about the Project", url: "https://ceal.cs.columbia.edu/tennisvideoa11y/" },
         { label: "Amazon SURE Program", url: "https://www.amazon.science/sure" },
+        { label: "CEAL Lab", url: "https://ceal.cs.columbia.edu/" },
         { label: "UIST '23 Paper", url: "https://doi.org/10.1145/3586183.3606830" },
         { label: "CHI EA '23 Paper", url: "https://doi.org/10.1145/3544549.3585610" },
       ],
@@ -219,10 +219,10 @@ const PROJECTS = [
     id: "placeholder",
     title: "Coming Soon",
     subtitle: "New project in progress",
-    description: "Something new is always in the works. Check back soon for details on this upcoming project.",
+    description: "Something new is in the works. Check back soon for details on this upcoming project.",
     tags: [],
     venue: "TBD",
-    period: "2026",
+    period: "2025",
     isPlaceholder: true,
     detail: null,
   },
@@ -236,28 +236,28 @@ const themes = {
   dark: {
     bg: "#111110", card: "rgba(255,255,255,0.03)", cardBorder: "rgba(255,255,255,0.08)",
     cardHover: "rgba(255,255,255,0.05)", cardBorderHover: "rgba(180,160,140,0.25)",
-    text: "#E8E4DF", textMuted: "#AAA", textFaint: "#888", textFaintest: "#666",
+    text: "#E8E4DF", textMuted: "#AAA", textFaint: "#888", textFaintest: "#777",
     accent: "#B4A08C", navBg: "rgba(17,17,16,0.88)", navBorder: "rgba(255,255,255,0.06)",
     gridLine: "rgba(255,255,255,0.025)", tagBg: "rgba(255,255,255,0.06)", tagText: "#999",
     accentTagBg: "rgba(180,160,140,0.12)", selection: "#B4A08C", selectionText: "#111110",
-    footerText: "#444", btnFill: "#E8E4DF", btnFillText: "#111110",
+    footerText: "#777", btnFill: "#E8E4DF", btnFillText: "#111110",
     btnOutlineBorder: "rgba(255,255,255,0.15)", btnOutlineBorderHover: "rgba(255,255,255,0.35)",
-    socialIcon: "#666", pubCardBg: "rgba(255,255,255,0.02)", pubCardBorder: "rgba(255,255,255,0.06)",
+    socialIcon: "#888", pubCardBg: "rgba(255,255,255,0.02)", pubCardBorder: "rgba(255,255,255,0.06)",
     chevron: "#888", placeholderBorder: "rgba(255,255,255,0.05)", placeholderText: "#555",
-    mobileOverlay: "rgba(17,17,16,0.97)",
+    mobileOverlay: "rgba(17,17,16,0.97)", focusRing: "rgba(180,160,140,0.6)",
   },
   light: {
     bg: "#F5F4F0", card: "rgba(0,0,0,0.02)", cardBorder: "rgba(0,0,0,0.08)",
     cardHover: "rgba(0,0,0,0.04)", cardBorderHover: "rgba(140,120,100,0.3)",
-    text: "#1A1A18", textMuted: "#555", textFaint: "#777", textFaintest: "#999",
+    text: "#1A1A18", textMuted: "#555", textFaint: "#666", textFaintest: "#777",
     accent: "#8C7560", navBg: "rgba(245,244,240,0.9)", navBorder: "rgba(0,0,0,0.07)",
-    gridLine: "rgba(0,0,0,0.04)", tagBg: "rgba(0,0,0,0.05)", tagText: "#777",
+    gridLine: "rgba(0,0,0,0.04)", tagBg: "rgba(0,0,0,0.05)", tagText: "#666",
     accentTagBg: "rgba(140,117,96,0.12)", selection: "#1A1A18", selectionText: "#F5F4F0",
-    footerText: "#BBB", btnFill: "#1A1A18", btnFillText: "#F5F4F0",
+    footerText: "#999", btnFill: "#1A1A18", btnFillText: "#F5F4F0",
     btnOutlineBorder: "rgba(0,0,0,0.15)", btnOutlineBorderHover: "rgba(0,0,0,0.4)",
-    socialIcon: "#999", pubCardBg: "rgba(0,0,0,0.02)", pubCardBorder: "rgba(0,0,0,0.07)",
+    socialIcon: "#777", pubCardBg: "rgba(0,0,0,0.02)", pubCardBorder: "rgba(0,0,0,0.07)",
     chevron: "#999", placeholderBorder: "rgba(0,0,0,0.06)", placeholderText: "#BBB",
-    mobileOverlay: "rgba(245,244,240,0.97)",
+    mobileOverlay: "rgba(245,244,240,0.97)", focusRing: "rgba(140,117,96,0.5)",
   },
 };
 
@@ -282,16 +282,26 @@ function FadeIn({ children, delay = 0 }) {
   );
 }
 
+// A11Y: Helper to handle Enter/Space key for clickable non-button elements
+function handleKeyActivate(callback) {
+  return (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      callback();
+    }
+  };
+}
+
 function ThemeToggle({ isDark, onToggle }) {
   return (
-    <button onClick={onToggle} aria-label="Toggle theme"
+    <button onClick={onToggle} aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       style={{ background: "none", border: "none", cursor: "pointer", padding: "6px", display: "flex", alignItems: "center", justifyContent: "center", color: isDark ? "#888" : "#999", transition: "color 0.2s ease" }}
       onMouseEnter={(e) => { e.currentTarget.style.color = isDark ? "#E8E4DF" : "#1A1A18"; }}
       onMouseLeave={(e) => { e.currentTarget.style.color = isDark ? "#888" : "#999"; }}>
       {isDark ? (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       ) : (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       )}
     </button>
   );
@@ -300,18 +310,25 @@ function ThemeToggle({ isDark, onToggle }) {
 /* --- EXPERIENCE CARD --- */
 function ExperienceCard({ item, index, t }) {
   const [open, setOpen] = useState(false);
+  const toggle = () => setOpen(!open);
   return (
     <FadeIn delay={index * 0.08}>
-      <div onClick={() => setOpen(!open)}
+      <div
+        role="button"
+        tabIndex={0}
+        aria-expanded={open}
+        aria-label={`${item.role} at ${item.company}, ${item.period}. Click to ${open ? "collapse" : "expand"} details.`}
+        onClick={toggle}
+        onKeyDown={handleKeyActivate(toggle)}
         style={{ background: t.card, border: `1px solid ${t.cardBorder}`, borderRadius: "14px", padding: "24px 28px", cursor: "pointer", transition: "all 0.3s ease", marginBottom: "16px" }}
         onMouseEnter={(e) => { e.currentTarget.style.borderColor = t.cardBorderHover; e.currentTarget.style.background = t.cardHover; }}
         onMouseLeave={(e) => { e.currentTarget.style.borderColor = t.cardBorder; e.currentTarget.style.background = t.card; }}>
         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-          <div style={{ width: "42px", height: "42px", borderRadius: "10px", background: item.color, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'DM Mono', monospace", fontSize: "13px", fontWeight: 600, color: "#fff", flexShrink: 0 }}>{item.icon}</div>
+          <div aria-hidden="true" style={{ width: "42px", height: "42px", borderRadius: "10px", background: item.color, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'DM Mono', monospace", fontSize: "13px", fontWeight: 600, color: "#fff", flexShrink: 0 }}>{item.icon}</div>
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "8px" }}>
               <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", fontWeight: 600, color: t.text, margin: 0 }}>{item.role}</h3>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s ease", flexShrink: 0 }}><path d="M3 5L7 9L11 5" stroke={t.chevron} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s ease", flexShrink: 0 }}><path d="M3 5L7 9L11 5" stroke={t.chevron} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </div>
             <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: t.textFaint, marginTop: "2px" }}>{item.company} &middot; {item.location} &middot; {item.period}</div>
           </div>
@@ -333,11 +350,16 @@ function ExperienceCard({ item, index, t }) {
 function ProjectCard({ project, index, t, onOpen }) {
   const [hovered, setHovered] = useState(false);
   const isPlaceholder = project.isPlaceholder;
+  const handleClick = () => !isPlaceholder && onOpen(project.id);
 
   return (
     <FadeIn delay={index * 0.08}>
       <div
-        onClick={() => !isPlaceholder && onOpen(project.id)}
+        role={isPlaceholder ? undefined : "button"}
+        tabIndex={isPlaceholder ? -1 : 0}
+        aria-label={isPlaceholder ? undefined : `View ${project.title} project details`}
+        onClick={handleClick}
+        onKeyDown={isPlaceholder ? undefined : handleKeyActivate(handleClick)}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         style={{
@@ -369,7 +391,7 @@ function ProjectCard({ project, index, t, onOpen }) {
             </div>
           )}
           {!isPlaceholder && (
-            <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "14px", fontFamily: "'DM Mono', monospace", fontSize: "12px", color: t.accent }}>
+            <div aria-hidden="true" style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "14px", fontFamily: "'DM Mono', monospace", fontSize: "12px", color: t.accent }}>
               View Project <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 1L11 7L3 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </div>
           )}
@@ -385,7 +407,11 @@ function PrevNextBtn({ direction, project, t, onClick }) {
   const isPrev = direction === "prev";
   return (
     <div
+      role="button"
+      tabIndex={0}
+      aria-label={`${isPrev ? "Previous" : "Next"} project: ${project.title}`}
       onClick={onClick}
+      onKeyDown={handleKeyActivate(onClick)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
@@ -395,7 +421,7 @@ function PrevNextBtn({ direction, project, t, onClick }) {
         transition: "all 0.3s ease", flex: 1, minWidth: 0,
         textAlign: isPrev ? "left" : "right",
       }}>
-      <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: t.textFaintest, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "8px", display: "flex", alignItems: "center", gap: "6px", justifyContent: isPrev ? "flex-start" : "flex-end" }}>
+      <div aria-hidden="true" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: t.textFaintest, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "8px", display: "flex", alignItems: "center", gap: "6px", justifyContent: isPrev ? "flex-start" : "flex-end" }}>
         {isPrev && <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M11 7H3M3 7L7 3M3 7L7 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>}
         {isPrev ? "Previous" : "Next"}
         {!isPrev && <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 7H11M11 7L7 3M11 7L7 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>}
@@ -417,10 +443,16 @@ function ProjectPage({ project, t, onBack, onNavigate }) {
   return (
     <div className="section-padding" style={{ paddingTop: "120px", paddingBottom: "80px", maxWidth: "860px", margin: "0 auto", position: "relative", zIndex: 1 }}>
       {/* Back button */}
-      <div onClick={onBack} style={{ display: "inline-flex", alignItems: "center", gap: "8px", cursor: "pointer", fontFamily: "'DM Mono', monospace", fontSize: "13px", color: t.accent, marginBottom: "48px", transition: "opacity 0.2s" }}
+      <div
+        role="button"
+        tabIndex={0}
+        aria-label="Back to Projects section"
+        onClick={onBack}
+        onKeyDown={handleKeyActivate(onBack)}
+        style={{ display: "inline-flex", alignItems: "center", gap: "8px", cursor: "pointer", fontFamily: "'DM Mono', monospace", fontSize: "13px", color: t.accent, marginBottom: "48px", transition: "opacity 0.2s" }}
         onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.7"; }}
         onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}>
-        <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M11 7H3M3 7L7 3M3 7L7 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M11 7H3M3 7L7 3M3 7L7 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
         Back to Projects
       </div>
 
@@ -469,7 +501,7 @@ function ProjectPage({ project, t, onBack, onNavigate }) {
       {/* Links */}
       {d.links && d.links.length > 0 && (
         <FadeIn delay={0.3}>
-          <div style={{ padding: "28px", background: t.card, border: `1px solid ${t.cardBorder}`, borderRadius: "14px", marginTop: "24px" }}>
+          <nav aria-label="Project links and resources" style={{ padding: "28px", background: t.card, border: `1px solid ${t.cardBorder}`, borderRadius: "14px", marginTop: "24px" }}>
             <h3 style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: t.textFaintest, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "16px" }}>Links & Resources</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
               {d.links.map((link, i) => (
@@ -478,16 +510,16 @@ function ProjectPage({ project, t, onBack, onNavigate }) {
                   onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.7"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}>
                   {link.label}
-                  <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H5M13 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <svg aria-hidden="true" width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H5M13 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </a>
               ))}
             </div>
-          </div>
+          </nav>
         </FadeIn>
       )}
 
       {/* Prev / Next project navigation */}
-      <div className="prev-next-nav" style={{ display: "flex", gap: "16px", marginTop: "64px", borderTop: `1px solid ${t.cardBorder}`, paddingTop: "40px" }}>
+      <nav aria-label="Project navigation" className="prev-next-nav" style={{ display: "flex", gap: "16px", marginTop: "64px", borderTop: `1px solid ${t.cardBorder}`, paddingTop: "40px" }}>
         {prevProject ? (
           <PrevNextBtn direction="prev" project={prevProject} t={t} onClick={() => onNavigate(prevProject.id)} />
         ) : (
@@ -498,7 +530,7 @@ function ProjectPage({ project, t, onBack, onNavigate }) {
         ) : (
           <div style={{ flex: 1 }} />
         )}
-      </div>
+      </nav>
     </div>
   );
 }
@@ -544,6 +576,13 @@ export default function Portfolio() {
     }, 50);
   };
 
+  // A11Y: Close mobile menu on Escape key
+  useEffect(() => {
+    const handleEsc = (e) => { if (e.key === "Escape" && menuOpen) setMenuOpen(false); };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [menuOpen]);
+
   useEffect(() => { setTimeout(() => setHeroVisible(true), 100); }, []);
 
   useEffect(() => {
@@ -575,6 +614,11 @@ export default function Portfolio() {
         body { background: ${t.bg}; transition: background 0.4s ease; }
         ::selection { background: ${t.selection}; color: ${t.selectionText}; }
         .grid-bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; background-image: linear-gradient(${t.gridLine} 1px, transparent 1px), linear-gradient(90deg, ${t.gridLine} 1px, transparent 1px); background-size: 60px 60px; }
+        /* A11Y: Focus indicator for keyboard navigation - only shows when tabbing, not clicking */
+        *:focus-visible { outline: 2px solid ${t.focusRing}; outline-offset: 3px; border-radius: 4px; }
+        /* A11Y: Skip to content link - hidden until focused */
+        .skip-link { position: absolute; top: -100px; left: 16px; padding: 12px 24px; background: ${t.btnFill}; color: ${t.btnFillText}; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; border-radius: 8px; z-index: 200; text-decoration: none; transition: top 0.2s ease; }
+        .skip-link:focus { top: 12px; }
         .desktop-nav { display: flex; }
         .mobile-burger { display: none; }
         /* MOBILE: responsive padding and photo sizing */
@@ -600,15 +644,29 @@ export default function Portfolio() {
           .hero-photo-container { width: 320px !important; height: 340px !important; }
           .hero-photo { width: 260px !important; height: 260px !important; }
         }
+        /* A11Y: Reduced motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+          *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+          html { scroll-behavior: auto; }
+        }
         a { color: inherit; }
       `}</style>
+
+      {/* A11Y: Skip to content link */}
+      <a className="skip-link" href="#main-content">Skip to main content</a>
 
       {/* BACKUP: Grid line overlay on background
        <div className="grid-bg" /> */}
 
       {/* NAV */}
-      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, padding: "0 max(20px, env(safe-area-inset-left, 20px))", height: "60px", display: "flex", justifyContent: "space-between", alignItems: "center", background: scrolled ? t.navBg : "transparent", backdropFilter: scrolled ? "blur(16px)" : "none", borderBottom: scrolled ? `1px solid ${t.navBorder}` : "1px solid transparent", transition: "all 0.4s ease" }}>
-        <div style={{ cursor: "pointer", zIndex: 101 }} onClick={() => scrollTo("home")}>
+      <nav aria-label="Main navigation" style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, padding: "0 max(20px, env(safe-area-inset-left, 20px))", height: "60px", display: "flex", justifyContent: "space-between", alignItems: "center", background: scrolled ? t.navBg : "transparent", backdropFilter: scrolled ? "blur(16px)" : "none", borderBottom: scrolled ? `1px solid ${t.navBorder}` : "1px solid transparent", transition: "all 0.4s ease" }}>
+        <div
+          role="button"
+          tabIndex={0}
+          aria-label="Go to top of page"
+          onClick={() => scrollTo("home")}
+          onKeyDown={handleKeyActivate(() => scrollTo("home"))}
+          style={{ cursor: "pointer", zIndex: 101 }}>
           <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", fontWeight: 600, color: t.text }}>Conrad Wyrick</span>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "32px" }}>
@@ -617,36 +675,53 @@ export default function Portfolio() {
               const id = sec.toLowerCase();
               const isActive = !currentProject && activeSection === id;
               return (
-                <span key={sec} onClick={() => scrollTo(id)} onMouseEnter={() => setHoveredNav(id)} onMouseLeave={() => setHoveredNav(null)}
+                <span key={sec}
+                  role="button"
+                  tabIndex={0}
+                  aria-current={isActive ? "true" : undefined}
+                  onClick={() => scrollTo(id)}
+                  onKeyDown={handleKeyActivate(() => scrollTo(id))}
+                  onMouseEnter={() => setHoveredNav(id)}
+                  onMouseLeave={() => setHoveredNav(null)}
                   style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", fontWeight: 400, color: isActive ? t.text : t.textFaint, cursor: "pointer", transition: "color 0.2s ease", ...(hoveredNav === id && !isActive ? { color: t.textMuted } : {}) }}>{sec}</span>
               );
             })}
           </div>
           <ThemeToggle isDark={isDark} onToggle={() => setIsDark(!isDark)} />
-          <div className="mobile-burger" onClick={() => setMenuOpen(!menuOpen)} style={{ cursor: "pointer", flexDirection: "column", gap: "5px", padding: "4px", zIndex: 101 }}>
+          <button
+            className="mobile-burger"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={menuOpen}
+            style={{ cursor: "pointer", flexDirection: "column", gap: "5px", padding: "4px", zIndex: 101, background: "none", border: "none" }}>
             <div style={{ width: "20px", height: "1.5px", background: t.text, transition: "all 0.3s", transform: menuOpen ? "rotate(45deg) translate(4.5px,4.5px)" : "none" }} />
             <div style={{ width: "20px", height: "1.5px", background: t.text, transition: "all 0.3s", opacity: menuOpen ? 0 : 1 }} />
             <div style={{ width: "20px", height: "1.5px", background: t.text, transition: "all 0.3s", transform: menuOpen ? "rotate(-45deg) translate(4.5px,-4.5px)" : "none" }} />
-          </div>
+          </button>
         </div>
       </nav>
 
       {menuOpen && (
-        <div style={{ position: "fixed", inset: 0, zIndex: 99, background: t.mobileOverlay, backdropFilter: "blur(20px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "32px" }}>
+        <div role="dialog" aria-label="Navigation menu" style={{ position: "fixed", inset: 0, zIndex: 99, background: t.mobileOverlay, backdropFilter: "blur(20px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "32px" }}>
           {SECTIONS.map((sec) => (
-            <div key={sec} onClick={() => { scrollTo(sec.toLowerCase()); setMenuOpen(false); }}
+            <div key={sec}
+              role="button"
+              tabIndex={0}
+              onClick={() => { scrollTo(sec.toLowerCase()); setMenuOpen(false); }}
+              onKeyDown={handleKeyActivate(() => { scrollTo(sec.toLowerCase()); setMenuOpen(false); })}
               style={{ fontFamily: "'Instrument Serif', serif", fontSize: "32px", color: t.text, cursor: "pointer" }}>{sec}</div>
           ))}
         </div>
       )}
 
       {/* --- PROJECT DETAIL VIEW --- */}
+      <main id="main-content">
       {currentProject ? (
         <ProjectPage project={currentProject} t={t} onBack={closeProject} onNavigate={openProject} />
       ) : (
         <>
           {/* HERO */}
-          <section id="home" className="section-padding" style={{ minHeight: "100vh", display: "flex", alignItems: "center", paddingTop: "100px", paddingBottom: "60px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <section id="home" aria-label="Introduction" className="section-padding" style={{ minHeight: "100vh", display: "flex", alignItems: "center", paddingTop: "100px", paddingBottom: "60px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
             <div className="hero-grid" style={{ display: "flex", gap: "60px", alignItems: "center", width: "100%", opacity: heroVisible ? 1 : 0, transform: heroVisible ? "translateY(0)" : "translateY(30px)", transition: "all 0.9s cubic-bezier(0.16,1,0.3,1) 0.15s" }}>
               <div className="hero-text" style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
                 <h1 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "clamp(36px, 6vw, 64px)", fontWeight: 400, lineHeight: 1.1, color: t.text, marginBottom: "16px" }}>Hi, I'm Conrad.</h1>
@@ -661,13 +736,13 @@ export default function Portfolio() {
                     onMouseLeave={(e) => { e.currentTarget.style.borderColor = t.btnOutlineBorder; }}>CV</a>
                 </div>
                 <div className="socials" style={{ display: "flex", gap: "16px" }}>
-                  <a href="https://www.linkedin.com/in/conradwyrick/" target="_blank" rel="noopener noreferrer" style={{ color: t.socialIcon, transition: "color 0.2s" }}
+                  <a href="https://www.linkedin.com/in/conradwyrick/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" style={{ color: t.socialIcon, transition: "color 0.2s" }}
                     onMouseEnter={(e) => { e.currentTarget.style.color = t.text; }} onMouseLeave={(e) => { e.currentTarget.style.color = t.socialIcon; }}>
-                    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                   </a>
-                  <a href="mailto:contact@conradwyrick.com" style={{ color: t.socialIcon, transition: "color 0.2s" }}
+                  <a href="mailto:contact@conradwyrick.com" aria-label="Send email" style={{ color: t.socialIcon, transition: "color 0.2s" }}
                     onMouseEnter={(e) => { e.currentTarget.style.color = t.text; }} onMouseLeave={(e) => { e.currentTarget.style.color = t.socialIcon; }}>
-                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+                    <svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
                   </a>
                 </div>
               </div>
@@ -689,26 +764,26 @@ export default function Portfolio() {
           </section>
 
           {/* ABOUT */}
-          <section id="about" className="section-padding" style={{ paddingTop: "100px", paddingBottom: "100px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <section id="about" aria-label="About Me" className="section-padding" style={{ paddingTop: "100px", paddingBottom: "100px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
             <FadeIn><h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "36px", fontWeight: 400, textAlign: "center", marginBottom: "40px", color: t.text }}>About Me</h2></FadeIn>
             <FadeIn delay={0.1}>
               <div style={{ maxWidth: "860px", margin: "0 auto" }}>
                 <p className="about-text" style={{ color: t.textMuted, lineHeight: 1.8, marginBottom: "16px" }}>I'm a Mechanical Engineering graduate from the University of Florida who is passionate about building technology that serves people. I've worked on accessibility tools for the blind/low-vision, medical device design, and humanitarian aid forecasting.</p>
-                <p className="about-text" style={{ color: t.textMuted, lineHeight: 1.8 }}>Currently, I'm an Analyst, Compliance & Control within Commercial Data & Analytics at S&P Global. I support the Dow Jones Indices business by helping drive compliance oversight, control effectiveness, and process improvement initiatives that enhance operational excellence and support business objectives. When I'm not analyzing data, you can find me reading about the recent news on AI, exploring engineering design, or planning my next project.</p>
+                <p className="about-text" style={{ color: t.textMuted, lineHeight: 1.8 }}>Currently, I'm a Research Analyst at S&P Global in an 18-month rotational program focused on energy market forecasting, seaborn oil transits, and midstream oil markets. When I'm not analyzing data, you can find me reading about the recent news on AI, exploring engineering design, or planning my next project.</p>
               </div>
             </FadeIn>
           </section>
 
-          {/* PROJECTS */}
-          <section id="projects" className="section-padding" style={{ paddingTop: "100px", paddingBottom: "100px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-            <FadeIn><h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "36px", fontWeight: 400, textAlign: "center", marginBottom: "48px", color: t.text }}>Projects</h2></FadeIn>
-            <div className="projects-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px", gridAutoRows: "1fr" }}>
-              {PROJECTS.map((p, i) => <ProjectCard key={p.id} project={p} index={i} t={t} onOpen={openProject} />)}
+          {/* EXPERIENCE */}
+          <section id="experience" aria-label="Recent Experience" className="section-padding" style={{ paddingTop: "100px", paddingBottom: "100px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+            <FadeIn><h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "36px", fontWeight: 400, textAlign: "center", marginBottom: "48px", color: t.text }}>Recent Experience</h2></FadeIn>
+            <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+              {EXPERIENCE.map((item, i) => <ExperienceCard key={i} item={item} index={i} t={t} />)}
             </div>
           </section>
 
           {/* PUBLICATIONS */}
-          <section className="section-padding" style={{ paddingTop: "0", paddingBottom: "40px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <section aria-label="Publications" className="section-padding" style={{ paddingTop: "0", paddingBottom: "40px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
             <FadeIn>
               <div style={{ maxWidth: "860px", margin: "0 auto", padding: "28px", background: t.pubCardBg, border: `1px solid ${t.pubCardBorder}`, borderRadius: "14px" }}>
                 <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 600, color: t.text, marginBottom: "16px", textTransform: "uppercase", letterSpacing: "0.06em" }}>Publications</h3>
@@ -722,11 +797,11 @@ export default function Portfolio() {
             </FadeIn>
           </section>
 
-          {/* EXPERIENCE */}
-          <section id="experience" className="section-padding" style={{ paddingTop: "100px", paddingBottom: "100px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-            <FadeIn><h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "36px", fontWeight: 400, textAlign: "center", marginBottom: "48px", color: t.text }}>Recent Experience</h2></FadeIn>
-            <div style={{ maxWidth: "860px", margin: "0 auto" }}>
-              {EXPERIENCE.map((item, i) => <ExperienceCard key={i} item={item} index={i} t={t} />)}
+          {/* PROJECTS */}
+          <section id="projects" aria-label="Projects" className="section-padding" style={{ paddingTop: "100px", paddingBottom: "100px", maxWidth: "1200px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+            <FadeIn><h2 style={{ fontFamily: "'Instrument Serif', serif", fontSize: "36px", fontWeight: 400, textAlign: "center", marginBottom: "48px", color: t.text }}>Projects</h2></FadeIn>
+            <div className="projects-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px", gridAutoRows: "1fr" }}>
+              {PROJECTS.map((p, i) => <ProjectCard key={p.id} project={p} index={i} t={t} onOpen={openProject} />)}
             </div>
           </section>
 
@@ -737,6 +812,7 @@ export default function Portfolio() {
           </footer>
         </>
       )}
+      </main>
     </div>
   );
 }
