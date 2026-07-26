@@ -748,7 +748,7 @@ export default function Portfolio() {
               </div>
               <div style={{ flexShrink: 0 }}>
                 <div className="hero-photo-container" style={{ borderRadius: "18px", background: t.card, border: `1px solid ${t.cardBorder}`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "16px", transition: "all 0.4s ease" }}>
-                  <img className="hero-photo" src="/Photo_with_dad.jpg" alt="Conrad Wyrick" style={{ borderRadius: "25%", objectFit: "cover" }} />
+                  <img className="hero-photo" src="/Photo_with_dad.jpg" alt="Conrad Wyrick with his father at his University of Florida graduation. Conrad is wearing graduation attire with a Gator hat and beaded necklace, standing with his arm around his dad on campus." style={{ borderRadius: "25%", objectFit: "cover" }} />
                   {/* BACKUP: Gradient circle avatar with initial - uncomment to use instead of photo
                   <div style={{ width: "400px", height: "400px", borderRadius: "50%", background: "linear-gradient(135deg, #6B8F71, #8B6B8F)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Instrument Serif', serif", fontSize: "36px", color: "#fff" }}>C</div>
                   */}
