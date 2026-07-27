@@ -219,7 +219,7 @@ const PROJECTS = [
     id: "placeholder",
     title: "Coming Soon",
     subtitle: "New project in progress",
-    description: "Something new is in the works. Check back soon for details on this upcoming project.",
+    description: "I am always working on something. Check back in the future!",
     tags: [],
     venue: "TBD",
     period: "2025",
@@ -769,7 +769,7 @@ export default function Portfolio() {
             <FadeIn delay={0.1}>
               <div style={{ maxWidth: "860px", margin: "0 auto" }}>
                 <p className="about-text" style={{ color: t.textMuted, lineHeight: 1.8, marginBottom: "16px" }}>I'm a Mechanical Engineering graduate from the University of Florida who is passionate about building technology that serves people. I've worked on accessibility tools for the blind/low-vision, medical device design, and humanitarian aid forecasting.</p>
-                <p className="about-text" style={{ color: t.textMuted, lineHeight: 1.8 }}>Currently, I'm a Research Analyst at S&P Global in an 18-month rotational program focused on energy market forecasting, seaborn oil transits, and midstream oil markets. When I'm not analyzing data, you can find me reading about the recent news on AI, exploring engineering design, or planning my next project.</p>
+                <p className="about-text" style={{ color: t.textMuted, lineHeight: 1.8 }}>Currently, I'm an Analyst, Compliance & Control within Commercial Data & Analytics at S&P Global. I support the Dow Jones Indices business by helping drive compliance oversight, control effectiveness, and process improvement initiatives that enhance operational excellence and support business objectives. When I'm not analyzing data, you can find me reading about the recent news on AI, exploring engineering design, or planning my next project.</p>
               </div>
             </FadeIn>
           </section>
@@ -808,7 +808,7 @@ export default function Portfolio() {
           {/* FOOTER */}
           <footer className="section-padding" style={{ paddingTop: "40px", paddingBottom: "40px", maxWidth: "1200px", margin: "0 auto", borderTop: `1px solid ${t.navBorder}`, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", position: "relative", zIndex: 1 }}>
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: t.footerText }}>&copy; 2026 Conrad Wyrick</span>
-            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: t.footerText }}>Built with intention</span>
+            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "12px", color: t.footerText }}>Built with intention and free spirit</span>
           </footer>
         </>
       )}
